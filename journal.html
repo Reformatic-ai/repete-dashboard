@@ -18,13 +18,60 @@ a{color:#2463eb;text-decoration:none}a:hover{text-decoration:underline}
 .buy{background:#d9f0e0}.close{background:#fdeec8}
 </style></head><body>
 <div class=wrap>
-<h1>trade journal <span class=small>[PAPER] — generated 2026-10-12 13:37 UTC</span></h1>
+<h1>trade journal <span class=small>[PAPER] — generated 2026-10-12 19:47 UTC</span></h1>
 <p class=small>Every trade this bot makes, explained: the opportunity, the
 strategy's logic, the AI judge's view, and the risk plan. Paper trading —
 nothing here is financial advice.
 <a href="index.html">← dashboard</a> ·
 <a href="blog.html">blog</a></p>
-<article id="65aa0ef3"><h2>BUY AVGO — ma_crossover <span class="badge buy">buy</span></h2><div class=meta>2026-10-09 19:48 UTC · trade 65aa0ef3</div><div class=body>### Trade Journal: AVGO Buy (Paper Trading)
+<article id="2a6dc844"><h2>BUY V — ma_crossover <span class="badge buy">buy</span></h2><div class=meta>2026-10-12 19:46 UTC · trade 2a6dc844</div><div class=body>### Trade Journal: V Buy (Paper Trading)
+
+**Status:** Open
+**Trade ID:** 2a6dc844
+**Instrument:** Visa Inc. (V)
+**Action:** Buy 10 shares
+**Entry Price:** $389.695
+**Strategy:** ma_crossover
+**Regime:** Up/Low
+
+**Disclaimer:** This entry documents an automated **paper trade**. No real capital is at risk. This is a simulation for strategy evaluation and risk management calibration, not investment advice.
+
+#### The Opportunity
+The deterministic `ma_crossover` strategy triggered a buy signal on Visa (V) based on a short-term momentum shift. Specifically, the 10-day Simple Moving Average (SMA10) crossed above the 30-day Simple Moving Average (SMA30). At the time of the signal, the SMA10 was at **$370.84** and the SMA30 was at **$370.77**. The actual entry was filled at **$389.69**, significantly higher than the moving average values.
+
+This discrepancy highlights a critical characteristic of the data: the moving averages lag significantly behind the current price action. The &quot;crossover&quot; event technically occurred at a lower price level, but by the time the order was executed, the stock had already surged roughly $18 above the signal threshold. The strategy interpreted this as &quot;momentum turning up,&quot; but the entry price reflects a price that has already extended sharply, rather than a confirmation at the crossover point.
+
+#### Strategy Logic and Failure Modes
+Moving average crossovers are traded to capture the beginning of a trend reversal. The logic assumes that when short-term volatility outpaces medium-term volatility, a new trend is forming.
+
+However, this setup has well-known failure modes:
+1.  **Lag and Whipsaws:** In low-volatility or choppy markets, SMAs often cross and re-cross with minimal price movement, generating false signals.
+2.  **Late Entry:** As seen here, if the price moves rapidly, the entry occurs far from the signal origin. Buying $19 above the crossover price means the &quot;edge&quot; provided by the timing signal has already been largely consumed.
+3.  **Mean Reversion:** In strong uptrends, prices often pull back to test the SMA. Entering after a sharp move up (without a pullback) increases the risk of an immediate mean-reversion loss.
+
+#### The Judge’s View
+The AI risk-review flagged this trade for **downsizing** (scale 0.5) with a confidence score of 0.55. The reviewer noted that while the technical signal is weak due to the marginal difference between SMA10 and SMA30 (a spread of only $0.07), the fundamental backdrop is strong.
+
+The bull case cited recent news, including a price target hike by Baird and Visa’s participation in the OUSD stablecoin consortium. The bear case emphasized that the bot has a history of &quot;bad vetoes&quot; on similar momentum setups, suggesting that avoiding these trades has sometimes cost performance. However, the review concluded that the technical trigger is too weak to justify full size, so the position was halved to mitigate the risk of entering late in a move.
+
+#### Risk Plan
+*   **Position Size:** 10 shares of V. At the entry price of ~$390, this is a position value of ~$3,900.
+*   **Stop Loss:** Set at **$376.74**. This is approximately **3.3%** below the entry price. The stop is placed below the recent support zone and the SMA30 level ($370.77), providing a buffer against normal daily noise.
+*   **Invalidation:** The trade is considered wrong if V closes below $376.74. This would indicate that the momentum shift was a false breakout or that the price has returned to the mean.
+*   **Take Profit:** No fixed take-profit was set. The strategy relies on trailing stops or a second MA cross to exit, allowing the position to ride potential further upside if the trend sustains.
+
+#### What This Trade Proves
+This entry is a test of the strategy&#x27;s ability to execute when the signal lags significantly. It does not yet prove the validity of the MA crossover on V, as the outcome is pending. It does, however, validate the risk-management protocol: the judge correctly identified the weak technical signal and enforced a smaller size to protect capital against the high entry price.
+
+We will monitor whether the price holds above the SMA30 or if it reverts. Given the high entry relative to the moving averages, this position has less &quot;margin of safety&quot; than a typical crossover entry.</div></article><article id="f90d8215"><h2>BUY AMD — meanrev <span class="badge buy">buy</span></h2><div class=meta>2026-10-12 19:46 UTC · trade f90d8215</div><div class=body>**AMD Mean-Reversion Entry: Oversold Dip in Uptrend**
+
+This is a paper trade executed on October 15, 2026. No real capital is at risk; these entries are for simulation and strategy evaluation only. The bot initiated a buy of 8 shares of AMD at $593.19 based on a deterministic mean-reversion signal. The core trigger was the 2-period Relative Strength Index (RSI2) dropping to 4.9, well below the 10 threshold that defines an oversold condition. Crucially, this dip occurred while price remained significantly above the 200-day Simple Moving Average (SMA200) of $387.21. This configuration—an extreme short-term pullback within an intact long-term uptrend—is the specific setup this strategy is designed to capture. The strategy logic relies on the statistical tendency for prices to revert to the mean after such sharp, non-trend-breaking declines in bullish regimes.
+
+However, this setup carries known failure modes. The primary risk is that a dip in an uptrend can occasionally mark the beginning of a broader trend reversal, particularly if driven by fundamental shifts rather than technical exhaustion. In the semiconductor sector, where beta is high, these dips can deepen quickly if broader market sentiment sours. The recent history of this specific strategy class (RSI2 &lt; 10 in uptrend) shows a mixed record: out of 10 comparable past trades, 8 were winners but 2 were significant losses (JNJ at -3.68% and LLY at -3.28%). This 50% win rate with high variance indicates that while the average outcome is positive, individual trades can suffer substantial drawdowns if the &quot;oversold&quot; condition persists or if the sector faces a systemic shock.
+
+The AI risk reviewer assessed the signal with moderate confidence (0.55) and recommended a 0.5 scale-down on position size. The reviewer’s bear case highlighted two key concerns. First, the statistical edge is neutral given the 50% win rate of similar past trades, meaning full size is not justified by historical probability alone. Second, and more critically, AMD is a high-beta semiconductor exposure. The current portfolio already holds open positions in AVGO and NVDA, creating concentrated sector risk. With the broader market trading cautiously and chip stocks under pressure, adding another highly correlated name increases the portfolio’s vulnerability to a sector-wide selloff. The judge’s reasoning was that while the long-term trend is intact, the correlation risk necessitates reducing exposure to mitigate potential drawdowns from a coordinated chip-stock correction.
+
+Consequently, the position size was halved from the standard allocation, resulting in a buy of 8 shares rather than the standard 16. The risk plan includes a stop-loss placed at $548.36, calculated using ATR volatility metrics to avoid being stopped out by normal daily noise. This stop represents a defined maximum loss for this position. What would prove this trade wrong is a close below the stop price, indicating that the dip has evolved into a trend change rather than a temporary deviation. Additionally, if AMD breaks below the SMA200, the underlying premise of the trade—an intact uptrend—would be invalidated. This trade is n=1; a single outcome does not prove the strategy’s efficacy, but it provides one data point in the ongoing evaluation of how the bot manages risk in high-correlation, high-beta environments.</div></article><article id="65aa0ef3"><h2>BUY AVGO — ma_crossover <span class="badge buy">buy</span></h2><div class=meta>2026-10-09 19:48 UTC · trade 65aa0ef3</div><div class=body>### Trade Journal: AVGO Buy (Paper Trading)
 
 This entry documents a **paper trading** position. No real capital was at risk. The bot opened a long position in Broadcom (AVGO) based on a deterministic moving average crossover signal, subject to AI risk review.
 
