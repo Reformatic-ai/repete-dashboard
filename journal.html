@@ -18,13 +18,31 @@ a{color:#2463eb;text-decoration:none}a:hover{text-decoration:underline}
 .buy{background:#d9f0e0}.close{background:#fdeec8}
 </style></head><body>
 <div class=wrap>
-<h1>trade journal <span class=small>[PAPER] — generated 2026-10-12 19:47 UTC</span></h1>
+<h1>trade journal <span class=small>[PAPER] — generated 2026-10-13 13:38 UTC</span></h1>
 <p class=small>Every trade this bot makes, explained: the opportunity, the
 strategy's logic, the AI judge's view, and the risk plan. Paper trading —
 nothing here is financial advice.
 <a href="index.html">← dashboard</a> ·
 <a href="blog.html">blog</a></p>
-<article id="2a6dc844"><h2>BUY V — ma_crossover <span class="badge buy">buy</span></h2><div class=meta>2026-10-12 19:46 UTC · trade 2a6dc844</div><div class=body>### Trade Journal: V Buy (Paper Trading)
+<article id="e97b6766"><h2>CLOSE CAT — ma_crossover <span class="badge close">close</span></h2><div class=meta>2026-10-13 13:35 UTC · trade e97b6766</div><div class=body>### The Opportunity: A Narrow Crossover in a High-Yield Environment
+
+This trade event was a simulated (paper) execution of a long position in Caterpillar (CAT). The deterministic strategy triggered on a simple Moving Average Crossover. Specifically, the 10-day Simple Moving Average (SMA) at $809.89 crossed above the 30-day SMA at $809.09. This signal indicates a shift in short-term momentum to the bullish side. At the time of entry, CAT’s closing price was $825.29, providing a buffer above the signal average. The regime was tagged as &quot;up/low,&quot; suggesting a market environment where trends can be volatile or choppy, which is often a difficult condition for pure momentum strategies that rely on sustained directional moves.
+
+### Strategy Logic and Failure Modes
+
+Moving Average Crossovers are classic trend-following tools. The logic is straightforward: when the faster average moves above the slower one, it suggests that recent price action is outpacing the medium-term average, implying an uptrend is beginning or strengthening. The known failure mode for this setup, particularly in choppy or range-bound markets, is the &quot;whipsaw.&quot; In these environments, prices oscillate around the moving averages, causing frequent crossovers that do not lead to sustained trends. If the market is highly sensitive to macro factors—such as interest rates—technical signals can be overwhelmed by fundamental repricing, leading to false starts.
+
+### The Judge’s View
+
+The AI risk-review did not veto the trade but issued a &quot;downsize&quot; verdict with a size scale of 0.3 (30% of the standard position size). The review’s reasoning highlighted a discrepancy between the technical trigger and the broader context. While CAT had a positive historical win rate for mean-reversion entries, the specific MA Crossover pattern had a recent track record of failures, including losses on peers like Meta (META) and Goldman Sachs (GS). Furthermore, the review flagged the macro environment—characterized by record 30-year yields and hawkish Federal Reserve signals—as a headwind for high-multiple industrials. The judge determined that while the technical signal was valid, the risk of a false start in a rate-sensitive environment was too high for a full position, resulting in a significant reduction in share count to manage capital at risk.
+
+### Risk Plan and Outcome
+
+The risk plan was strict. With an entry price of $825.29, the stop-loss was set at $783.95, representing a risk of $41.34 per share, or approximately 5.01% of the entry price. There was no take-profit target; the exit was defined solely by the stop-loss or the reverse SMA crossover. The position was reduced to 2 shares, resulting in a total position value of $1,650.58.
+
+The trade ended in a loss. CAT was stopped out at $781.57, yielding a loss of $87.44 (-5.3%). The trade underperformed the benchmark by 7.07 percentage points. This outcome aligns with the judge’s caution: the crossover failed to sustain momentum, and the price fell back through the support structure, triggering the stop. While this is a single data point (n=1), it illustrates the danger of trading technical signals in isolation when macro headwinds are present. The downsize effectively limited the capital impact, but it did not prevent the loss. This event does not prove that all MA Crossovers in high-yield regimes fail, but it does reinforce the value of the risk-review process in right-sizing positions when the pattern’s recent reliability is questioned.
+
+*Note: This is a paper trade simulation. No real capital was at risk.*</div></article><article id="2a6dc844"><h2>BUY V — ma_crossover <span class="badge buy">buy</span></h2><div class=meta>2026-10-12 19:46 UTC · trade 2a6dc844</div><div class=body>### Trade Journal: V Buy (Paper Trading)
 
 **Status:** Open
 **Trade ID:** 2a6dc844
