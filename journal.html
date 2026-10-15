@@ -18,13 +18,44 @@ a{color:#2463eb;text-decoration:none}a:hover{text-decoration:underline}
 .buy{background:#d9f0e0}.close{background:#fdeec8}
 </style></head><body>
 <div class=wrap>
-<h1>trade journal <span class=small>[PAPER] — generated 2026-10-14 19:48 UTC</span></h1>
+<h1>trade journal <span class=small>[PAPER] — generated 2026-10-15 13:38 UTC</span></h1>
 <p class=small>Every trade this bot makes, explained: the opportunity, the
 strategy's logic, the AI judge's view, and the risk plan. Paper trading —
 nothing here is financial advice.
 <a href="index.html">← dashboard</a> ·
 <a href="blog.html">blog</a></p>
-<article id="d06a78d0"><h2>BUY XLK — meanrev <span class="badge buy">buy</span></h2><div class=meta>2026-10-14 19:48 UTC · trade d06a78d0</div><div class=body>**PAPER TRADING NOTICE:** This is a simulated paper trading journal. No real capital is at risk. The following entry describes a deterministic strategy execution in a virtual account.
+<article id="f90d8215"><h2>CLOSE AMD — meanrev <span class="badge close">close</span></h2><div class=meta>2026-10-15 13:36 UTC · trade f90d8215</div><div class=body>**Entry: AMD (Paper Trade) – Mean Reversion Long**
+
+This journal entry documents a paper trading execution. No real capital was at risk. The strategy identified a potential mean-reversion opportunity in Advanced Micro Devices (AMD) on 2026-10-12. The deterministic signal triggered because the 2-day Relative Strength Index (RSI2) dropped to 4.9, well below the threshold of 10, while the stock price ($593.19) remained significantly above the 200-day Simple Moving Average (SMA200) of $387.21. This specific configuration suggests a sharp, short-term pullback within a long-term intact uptrend. The strategy logic assumes that in bullish regimes, extreme short-term oversold conditions are often caused by technical selling or volatility spikes rather than fundamental deterioration, and thus tend to revert quickly toward the mean.
+
+However, the strategy’s known failure modes include entering during a broader sector-wide selloff where the &quot;oversold&quot; condition persists for days or weeks, or when high-beta volatility breaks through the structural support of the uptrend. The AI risk review flagged these concerns specifically. While it acknowledged the technical strength of the uptrend, it noted that the strategy’s historical win rate is only 50% with high variance. Furthermore, the review highlighted that AMD is a high-beta semiconductor name that correlates closely with other existing positions in the paper portfolio (AVGO, NVDA). Given the reported chip selloff at the time, the concentration risk was deemed elevated. Consequently, the judge issued a &quot;downsize&quot; verdict, scaling the position to 50% of the standard size. This resulted in a position of 8 shares, valued at approximately $4,745.
+
+The risk plan was explicit. The entry price was $593.19. A fixed stop-loss was placed at $548.36, which is 7.56% below the entry price. There was no trailing stop and no fixed take-profit target; the exit was purely rule-based. The trade would be proven wrong if the price closed below the $548.36 stop. The expected hold was short, typically 2 to 7 days, with the intent to exit as soon as the price closed back above the 5-day SMA ($623.45 at entry) or if the stop was hit.
+
+**Outcome Analysis**
+
+The trade resulted in a loss. The stop-loss at $548.36 was triggered, and the exit was executed at $541.12. The total loss was $416.54, or -8.78% on the position. This outcome proves that the initial hypothesis of a quick reversion was incorrect for this specific instance. The price did not stabilize above the 5-day average before breaking down through the stop level. It is important to note that this is a single data point (n=1). While the loss underperformed the benchmark (which dropped -1.6% over the same period, resulting in -7.18% alpha), one trade does not invalidate the strategy&#x27;s overall logic. It does, however, validate the risk manager&#x27;s decision to downsize; at full size, the loss would have been nearly double. The event highlights the danger of mean-reverting entries in high-correlation, high-volatility sectors during sustained sell-offs, where the &quot;oversold&quot; indicator can remain oversold for longer than the stop allows for a reversion to occur.</div></article><article id="65aa0ef3"><h2>CLOSE AVGO — ma_crossover <span class="badge close">close</span></h2><div class=meta>2026-10-15 13:35 UTC · trade 65aa0ef3</div><div class=body>### AVGO Paper Trade Entry: 65aa0ef3
+
+This entry documents a paper trading action for Broadcom (AVGO) initiated on October 9, 2026. It is critical to emphasize that this was a **paper trade** with no real capital at risk. The objective is to test the mechanical reliability of a moving average crossover strategy under specific market regimes, specifically within an &quot;up/low&quot; volatility environment.
+
+#### The Opportunity
+The deterministic strategy identified a standard momentum trigger: the 10-day Simple Moving Average (SMA10) at $359.11 crossed above the 30-day SMA30 at $358.06. At the time of the signal, the closing price was $361.49. The strategy interpreted this crossover as a confirmation that short-term momentum had reclaimed strength from the intermediate trend. The spread between the two moving averages was extremely tight, less than 0.4% of the share price, indicating a transition point rather than an established trend.
+
+#### Strategy Logic and Failure Modes
+The logic behind trading this setup is trend-following. When the fast average crosses the slow average, it historically signals a shift in mean price direction. The strategy assumes that buying this momentum will capture the subsequent upward drift.
+
+However, this setup has well-known failure modes, particularly in &quot;choppy&quot; or &quot;up/low&quot; regimes. A tight crossover in a high-volatility environment often results in &quot;whipsaw,&quot; where the price oscillates around the averages, triggering false signals. The strategy is blind to fundamental catalysts and relies purely on price action. If the crossover occurs during a period of consolidation rather than genuine expansion, the position is likely to fail as the averages re-converge.
+
+#### The Judge’s View
+The AI risk review approved the trade with a scale factor of 1.0 and a confidence score of 0.55. The judge noted that the &quot;up/low&quot; regime is generally supportive for momentum strategies. Crucially, the review cited the model’s own history of &quot;bad vetoes&quot;—instances where blocking signals in this specific regime led to missed gains. The bear case raised valid concerns about the tightness of the crossover and potential headwinds from EU antitrust scrutiny, but the judge decided that the lack of a specific historical lesson proving this signal type failed in this context meant the standard edge should be respected. The review effectively prioritized consistency with past data over current qualitative risks.
+
+#### Risk Plan
+The position was sized at 22 shares, resulting in a total position value of approximately $7,952. The stop-loss was placed at $340.87, representing a risk of $20.62 per share, or 5.7% of the entry price. The thesis was invalidated if the price closed below this stop. There was no take-profit target; the plan was an open-ended trend follow, exiting only when the SMA10 crossed back below the SMA30 or the stop was hit.
+
+#### Outcome
+The trade resulted in a **loss**. The position was closed at $337.22 after hitting the stop-loss, incurring a loss of $533.83 (-6.71%). This outcome underperformed the benchmark, which saw a decline of 1.66%, resulting in negative alpha of 5.05%.
+
+This single data point ($n=1$) suggests that in this specific instance, the &quot;up/low&quot; regime did not provide the momentum support the judge anticipated. The tight initial spread may have indicated a lack of conviction in the trend, leading to a rapid reversal that triggered the stop. While this result aligns with the hypothesized failure mode of tight crossovers in volatile markets, it is not sufficient to declare the strategy broken. It serves as a reminder that statistical edges operate over large sample sizes, and individual trades can deviate significantly from expected probabilities due to noise and regime shifts.</div></article><article id="d06a78d0"><h2>BUY XLK — meanrev <span class="badge buy">buy</span></h2><div class=meta>2026-10-14 19:48 UTC · trade d06a78d0</div><div class=body>**PAPER TRADING NOTICE:** This is a simulated paper trading journal. No real capital is at risk. The following entry describes a deterministic strategy execution in a virtual account.
 
 ### The Opportunity: Oversold Dip in an Intact Uptrend
 
