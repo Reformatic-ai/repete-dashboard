@@ -18,13 +18,32 @@ a{color:#2463eb;text-decoration:none}a:hover{text-decoration:underline}
 .buy{background:#d9f0e0}.close{background:#fdeec8}
 </style></head><body>
 <div class=wrap>
-<h1>trade journal <span class=small>[PAPER] — generated 2026-10-15 13:38 UTC</span></h1>
+<h1>trade journal <span class=small>[PAPER] — generated 2026-10-15 19:48 UTC</span></h1>
 <p class=small>Every trade this bot makes, explained: the opportunity, the
 strategy's logic, the AI judge's view, and the risk plan. Paper trading —
 nothing here is financial advice.
 <a href="index.html">← dashboard</a> ·
 <a href="blog.html">blog</a></p>
-<article id="f90d8215"><h2>CLOSE AMD — meanrev <span class="badge close">close</span></h2><div class=meta>2026-10-15 13:36 UTC · trade f90d8215</div><div class=body>**Entry: AMD (Paper Trade) – Mean Reversion Long**
+<article id="b4abbb35"><h2>CLOSE NVDA — meanrev <span class="badge close">close</span></h2><div class=meta>2026-10-15 19:45 UTC · trade b4abbb35</div><div class=body>**PAPER TRADE ENTRY: NVDA (Trade ID: b4abbb35)**
+
+*Note: This entry documents a **paper trade** executed by an automated bot. No real capital was at risk. This record is for educational and strategy analysis purposes only.*
+
+### The Opportunity
+The deterministic mean-reversion strategy identified a setup in NVDA on October 9, 2026. The core signal was an extreme oversold condition: the RSI(2) dropped to **9.6**, breaching the strict threshold of &lt; 10. Simultaneously, the structural uptrend remained intact, with the closing price of **$229.65** sitting comfortably above the SMA200 of **$201.83**. This divergence—a deep pullback within a confirmed long-term uptrend—is the classic profile the strategy trades. The SMA5 was at **$235.15**, indicating the immediate price action had already retraced below the short-term average, signaling a potential snapback opportunity.
+
+### Strategy Logic and Failure Modes
+The logic behind this setup is statistical: in a robust uptrend, sharp 2-day declines often represent noise or panic selling rather than trend reversal. The strategy assumes price will revert to the mean (typically the SMA5) within a few days. However, this approach has known failure modes. The primary risk is the &quot;trend change,&quot; where the dip is actually the start of a new downtrend. Another critical failure mode is the &quot;gap-through,&quot; where bad news causes the price to open below the stop-loss order, resulting in slippage and a loss larger than planned. This trade was explicitly entered with a fixed stop at **$219.25**, accepting that a gap could render this protection ineffective.
+
+### The Judge’s View
+The AI risk-reviewer analyzed the context and issued a **downsize** verdict with a size scale of **0.5**. While acknowledging the strong historical win rate for this specific RSI2 setup, the judge flagged two critical external risks. First, recent news narratives warned of a &quot;bull trap&quot; with price targets below the current level. Second, high macro volatility was imminent due to FOMC and CPI data releases. The judge concluded that while the technicals were valid, the event risk justified halving the position size to mitigate the impact of a potential gap-down. The final entry was executed for **21 shares** at an average price of **$229.645**.
+
+### The Risk Plan
+The position was sized to risk approximately **$218.40** (10.40 per share × 21 shares) if the stop was hit at **$219.25**. This represented a **4.53%** risk on the position value. The thesis was invalid if price closed below the stop. The expected hold was short, typically 2–3 days, with a hard cap of 7 days. The exit rule was binary: exit on stop-loss or if price reclaimed the SMA5.
+
+### Outcome and Analysis
+The trade resulted in a **loss**. The exit price was **$214.77**, significantly below the planned stop of **$219.25**. The recorded PnL was **-$312.32** (-6.48%), underperforming the benchmark by **5.66%**.
+
+This outcome highlights the &quot;gap-through&quot; failure mode identified in the strategy logic. The judge’s caution regarding macro risk and bull traps was prescient; the price action did not respect the stop order. While one trade is n=1, this result suggests that the 0.5 size scale, while mitigating damage, did not prevent the structural failure of the setup. The &quot;oversold&quot; signal was not a floor but a continuation of selling pressure. This loss does not invalidate the mean-reversion strategy globally, but it serves as a specific data point illustrating the danger of trading into high-volatility news events without adequate buffer against gap risk.</div></article><article id="f90d8215"><h2>CLOSE AMD — meanrev <span class="badge close">close</span></h2><div class=meta>2026-10-15 13:36 UTC · trade f90d8215</div><div class=body>**Entry: AMD (Paper Trade) – Mean Reversion Long**
 
 This journal entry documents a paper trading execution. No real capital was at risk. The strategy identified a potential mean-reversion opportunity in Advanced Micro Devices (AMD) on 2026-10-12. The deterministic signal triggered because the 2-day Relative Strength Index (RSI2) dropped to 4.9, well below the threshold of 10, while the stock price ($593.19) remained significantly above the 200-day Simple Moving Average (SMA200) of $387.21. This specific configuration suggests a sharp, short-term pullback within a long-term intact uptrend. The strategy logic assumes that in bullish regimes, extreme short-term oversold conditions are often caused by technical selling or volatility spikes rather than fundamental deterioration, and thus tend to revert quickly toward the mean.
 
