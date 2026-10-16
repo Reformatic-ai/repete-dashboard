@@ -18,13 +18,49 @@ a{color:#2463eb;text-decoration:none}a:hover{text-decoration:underline}
 .buy{background:#d9f0e0}.close{background:#fdeec8}
 </style></head><body>
 <div class=wrap>
-<h1>trade journal <span class=small>[PAPER] — generated 2026-10-15 19:48 UTC</span></h1>
+<h1>trade journal <span class=small>[PAPER] — generated 2026-10-16 13:37 UTC</span></h1>
 <p class=small>Every trade this bot makes, explained: the opportunity, the
 strategy's logic, the AI judge's view, and the risk plan. Paper trading —
 nothing here is financial advice.
 <a href="index.html">← dashboard</a> ·
 <a href="blog.html">blog</a></p>
-<article id="b4abbb35"><h2>CLOSE NVDA — meanrev <span class="badge close">close</span></h2><div class=meta>2026-10-15 19:45 UTC · trade b4abbb35</div><div class=body>**PAPER TRADE ENTRY: NVDA (Trade ID: b4abbb35)**
+<article id="7affdef1"><h2>BUY UNH — ma_crossover <span class="badge buy">buy</span></h2><div class=meta>2026-10-16 13:36 UTC · trade 7affdef1</div><div class=body>**PAPER TRADE ENTRY: UNH (UnitedHealth Group)**
+
+**Status:** Paper Trading (No Real Capital Risk)
+**Action:** Buy 5 shares at $406.67
+**Strategy:** MA Crossover
+
+### The Opportunity
+
+The deterministic `ma_crossover` strategy triggered a buy signal on UNH based on the Short-Term Momentum Indicator (SMA10) crossing above the Medium-Term Trend Indicator (SMA30). At the time of entry, the SMA10 stood at **$381.16** and the SMA30 at **$380.06**. This specific configuration indicates a marginal shift in momentum, suggesting that recent price action is beginning to outpace the longer-term average.
+
+However, it is critical to note the disconnect between the indicator levels and the actual entry price. While the moving averages signaled a crossover at approximately $381, the actual fill price was **$406.67**. This represents a significant gap (~6.7%) between the technical trigger level and the execution price. The strategy logic likely flagged the cross on prior data, but the order was executed at the current market price, implying a delayed reaction or a high-momentum chase into the position. The current market regime is classified as &quot;up/low,&quot; with SPY trading above its SMA and volatility contained at 10%.
+
+### The Strategy&#x27;s Logic
+
+Moving Average Crossovers are classic trend-following setups. The core premise is that when short-term momentum overtakes medium-term trend, an impulsive move is often underway. Traders participate in these setups to capture the initial legs of a new trend or the resumption of an existing one.
+
+**Known Failure Modes:**
+The primary weakness of this strategy, particularly in the current low-volatility environment, is the &quot;whipsaw&quot; effect. When SMAs are tightly converged—as seen here with a spread of only **$1.10** (~0.29%)—the signal is often noise rather than signal. The AI risk review explicitly flagged this, noting that similar tight-spread crossovers in AVGO and CAT recently resulted in losses of -6.7% and -5.3%, respectively. Furthermore, entering at a price significantly higher than the crossover level (the $406.67 entry vs. $381 SMA) removes the &quot;discount&quot; of early trend initiation, increasing the risk of immediate mean reversion.
+
+### The Judge&#x27;s View
+
+The AI risk-review issued a **downsize** verdict with a scale factor of **0.3** and low confidence (0.48). The judge’s reasoning was twofold:
+1.  **Weak Technical Signal:** The tight SMA spread suggests the crossover is marginal and prone to reversal.
+2.  **Historical Rejection:** UNH has been blocked or vetoed by the risk engine in six prior calls within the last two weeks. This pattern suggests the system consistently views the risk/reward as unfavorable for this symbol in the current regime.
+
+Despite these red flags, the trade was not fully vetoed due to fundamental catalysts: UNH recently beat Q3 estimates and raised its 2026 EPS outlook to at least $20.50. The judge balanced the technical weakness against this fundamental improvement, opting for a reduced size rather than a total ban.
+
+### The Risk Plan
+
+*   **Position Size:** 5 shares (approx. $2,033 value). This is a small fraction of the $100,197 equity, reflecting the 0.3 size scale applied to manage risk given the low conviction.
+*   **Stop Loss:** Placed at **$382.82**. This stop is positioned just below the $381.16 SMA10 level, effectively invalidating the trade if price reverts to the pre-crossover structure. This represents a risk of approximately 5.9% from entry.
+*   **Invalidation:** The trade is proven wrong if UNH fails to hold above the SMA10/30 confluence zone. Given the entry was ~25 points above this zone, the stock has little room to fall before the stop is triggered.
+*   **Context:** With 11 other open positions and gross exposure at 46%, this trade adds marginal healthcare sector exposure. It is a test of whether the fundamental beat can overcome the technical noise.
+
+### Conclusion
+
+This is a **paper trade**. It represents a low-conviction, high-risk entry where the price was paid significantly above the technical signal level. The position is sized small to limit damage if the tight crossover fails. We are watching to see if the fundamental strength of the earnings beat can sustain the price above the volatile $382–$383 support zone.</div></article><article id="b4abbb35"><h2>CLOSE NVDA — meanrev <span class="badge close">close</span></h2><div class=meta>2026-10-15 19:45 UTC · trade b4abbb35</div><div class=body>**PAPER TRADE ENTRY: NVDA (Trade ID: b4abbb35)**
 
 *Note: This entry documents a **paper trade** executed by an automated bot. No real capital was at risk. This record is for educational and strategy analysis purposes only.*
 
