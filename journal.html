@@ -18,13 +18,33 @@ a{color:#2463eb;text-decoration:none}a:hover{text-decoration:underline}
 .buy{background:#d9f0e0}.close{background:#fdeec8}
 </style></head><body>
 <div class=wrap>
-<h1>trade journal <span class=small>[PAPER] — generated 2026-10-19 13:37 UTC</span></h1>
+<h1>trade journal <span class=small>[PAPER] — generated 2026-10-19 19:47 UTC</span></h1>
 <p class=small>Every trade this bot makes, explained: the opportunity, the
 strategy's logic, the AI judge's view, and the risk plan. Paper trading —
 nothing here is financial advice.
 <a href="index.html">← dashboard</a> ·
 <a href="blog.html">blog</a></p>
-<article id="947555a2"><h2>BUY DELL — meanrev <span class="badge buy">buy</span></h2><div class=meta>2026-10-16 19:49 UTC · trade 947555a2</div><div class=body>**Paper Trading Journal: DELL Entry**
+<article id="37caa9a3"><h2>CLOSE AMZN — meanrev <span class="badge close">close</span></h2><div class=meta>2026-10-19 19:46 UTC · trade 37caa9a3</div><div class=body>**PAPER TRADING JOURNAL: AMZN Mean Reversion (Trade ID: 37caa9a3)**
+
+**Status:** Closed (Win)
+**Type:** Paper Trade (No real capital at risk)
+
+### The Opportunity: Oversold Dip in an Uptrend
+On October 16, 2026, the deterministic strategy identified a mean-reversion setup in AMZN. The price action had pulled back to $249.38, a level just above the 200-day Simple Moving Average (SMA) of $242.73. While the broader market regime was tagged as &quot;down/low,&quot; the long-term trend remained intact because the price held above the SMA200. The trigger was the 2-day Relative Strength Index (RSI2), which registered at 8.7. This extreme reading signaled a short-term oversold condition, suggesting that the immediate dip was likely a temporary deviation from the prevailing upward trend rather than the start of a new downtrend. The 5-day SMA was at $255.27, indicating the price was significantly below its short-term average, creating a statistical &quot;spring-back&quot; potential.
+
+### Strategy Logic and Failure Modes
+The mean-reversion strategy operates on the premise that assets in healthy long-term uptrends (defined by price &gt; SMA200) tend to revert to their mean after extreme short-term overextensions. Traders use the RSI2 &lt; 10 threshold to identify moments where panic selling has pushed the price disproportionately lower relative to its long-term value. The primary failure mode for this setup is regime change: if the &quot;uptrend&quot; breaks and the price falls through the SMA200, the mean-reversion logic fails, and the asset can continue to decline sharply. Another failure mode is event risk, where binary outcomes (like earnings) cause gaps that bypass technical support levels.
+
+### The Judge’s View: Risk-Adjusted Sizing
+The AI risk review acknowledged the historical 70% win rate for RSI2 &lt; 10 setups but flagged significant contextual risks. Specifically, it noted that AMZN was entering an earnings window within 14 days during a &quot;down/low&quot; macro regime. The review highlighted the tail risk of a gap-down through the stop-loss, a scenario where a standard stop order cannot prevent losses because the price opens below the stop. Consequently, the judge issued a &quot;downsize&quot; verdict with a 0.5 scale factor. This reduced the position size from the standard allocation to 20 shares (approx. $4,987 notional value). The logic was to preserve capital against the elevated probability of gap risk while still allowing exposure to the statistical edge.
+
+### Risk Plan and Execution
+The trade entered at $249.38. A hard stop-loss was placed at $237.58, representing a risk of $11.80 per share, or approximately 4.73% of the entry price. There was no fixed take-profit target; instead, the strategy was designed to exit when the price closed back above the 5-day SMA, the hard stop was hit, or 7 days elapsed.
+
+### Outcome vs. Plan
+The trade closed as a winner with a PnL of +$275.30 (+5.52%). The exit reason was &quot;strategy_sell,&quot; meaning the price likely reclaimed the 5-day SMA before the 7-day hard cap or the stop-loss was triggered. This outcome outperformed the benchmark by 4.88%.
+
+However, this single data point (n=1) does not validate the strategy. It demonstrates that in this specific instance, the mean-reversion thesis held and the gap risk feared by the judge did not materialize as a loss. It does not prove that the 0.5 size scale was optimal, nor does it guarantee that future RSI2 &lt; 10 entries in a &quot;down/low&quot; regime will yield similar returns. The positive alpha here is consistent with the historical win rate but remains an isolated event in the context of the strategy&#x27;s overall performance.</div></article><article id="947555a2"><h2>BUY DELL — meanrev <span class="badge buy">buy</span></h2><div class=meta>2026-10-16 19:49 UTC · trade 947555a2</div><div class=body>**Paper Trading Journal: DELL Entry**
 
 **Status:** PAPER TRADE ONLY. This is an automated simulation; no real capital is at risk.
 
