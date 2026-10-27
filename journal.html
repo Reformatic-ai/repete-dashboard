@@ -18,13 +18,52 @@ a{color:#2463eb;text-decoration:none}a:hover{text-decoration:underline}
 .buy{background:#d9f0e0}.close{background:#fdeec8}
 </style></head><body>
 <div class=wrap>
-<h1>trade journal <span class=small>[PAPER] — generated 2026-10-26 19:46 UTC</span></h1>
+<h1>trade journal <span class=small>[PAPER] — generated 2026-10-27 13:38 UTC</span></h1>
 <p class=small>Every trade this bot makes, explained: the opportunity, the
 strategy's logic, the AI judge's view, and the risk plan. Paper trading —
 nothing here is financial advice.
 <a href="index.html">← dashboard</a> ·
 <a href="blog.html">blog</a></p>
-<article id="16031787"><h2>BUY MCD — ma_crossover <span class="badge buy">buy</span></h2><div class=meta>2026-10-22 19:46 UTC · trade 16031787</div><div class=body>### The Opportunity
+<article id="6219a7f6"><h2>CLOSE SPY — ma_crossover <span class="badge close">close</span></h2><div class=meta>2026-10-27 13:36 UTC · trade 6219a7f6</div><div class=body>**Date:** 2026-09-29
+**Asset:** SPY (SPDR S&amp;P 500 ETF Trust)
+**Action:** Buy (Long) followed by immediate Strategy Sell
+**Type:** PAPER TRADE (No real capital was at risk)
+
+### The Opportunity
+The deterministic logic of the `ma_crossover` strategy triggered on SPY due to a specific technical alignment: the 10-period Simple Moving Average (SMA10) at 764.89 crossed above the 30-period SMA (SMA30) at 764.44. At the moment of the signal, the closing price was 765.61. This configuration indicates that short-term momentum is turning upward relative to the medium-term trend. The strategy interprets this &quot;golden cross&quot; variant (fast line overtaking slow line) as an entry signal for a potential trend-following position. The regime was tagged as &quot;up/low,&quot; suggesting a mixed or consolidating broader market environment rather than a strong, unidirectional bull or bear run.
+
+### Strategy Logic and Failure Modes
+Simple moving average crossovers are a classic trend-following heuristic. The underlying thesis is that when short-term price action rises above medium-term averages, inertia will carry the price higher, allowing the trader to capture the bulk of a new leg up.
+
+However, this setup has well-documented failure modes. In sideways or choppy markets, SMA crossovers frequently produce &quot;whipsaws,&quot; where the fast line crosses the slow line, only for the price to reverse before a significant move occurs. This results in a trade being entered near a local top and exited shortly after, often at a small loss. Additionally, crossovers are lagging indicators; by the time the SMA10 crosses the SMA30, a significant portion of the initial price move may have already happened, leaving limited upside relative to the risk.
+
+### The Judge&#x27;s View
+An AI risk-review model (Qwen3.8-27b) evaluated the trade before execution. The review did not veto the trade but issued a &quot;downsize&quot; verdict, scaling the intended position by 0.5 (50%).
+
+The model’s reasoning was nuanced. It acknowledged that the signal was technically valid and aligned with the regime. However, it highlighted two key risks:
+1.  **Recent Losses:** The model noted that the two most recent identical signals (on META and GS) had resulted in losses.
+2.  **Macro Volatility:** Rising bond yields and geopolitical risks were cited as creating a hostile environment for momentum strategies.
+
+The judge concluded that while a full veto would likely be an error (citing a low historical accuracy of vetoes, roughly 39%), the elevated risk warranted a significant reduction in size. This resulted in a final position of 5 shares instead of the potentially larger full-size allocation.
+
+### Risk Plan and Execution
+**Entry:** 765.61
+**Position Size:** 5 shares (approx. $3,828.05 notional value)
+**Stop Loss:** 751.63
+**Risk per Share:** $13.98 (1.83% of entry price)
+
+The stop loss was placed below the recent support structure, providing a buffer against normal intraday noise while defining a clear point of invalidation. There was no fixed take-profit target; the plan was to hold the position as long as the SMA10 remained above the SMA30, or until the stop was hit.
+
+### Outcome and Analysis
+The trade was executed and then closed shortly after via `strategy_sell`.
+**Exit Price:** 765.37
+**P&amp;L:** -$1.20 (-0.03%)
+**Benchmark P&amp;L:** +0.15%
+**Alpha:** -0.18%
+
+The position exited at a small loss, slightly underperforming the broad market. The entry at 765.61 was only marginally below the exit price of 765.37. The spread and the immediate lack of follow-through momentum led to the strategy signal reversing (SMA10 likely failing to stay decisively above SMA30 or hitting a local resistance), triggering the exit.
+
+This is a single data point (n=1). It does not prove that the strategy is broken, nor does it prove that the 0.5 size scale was correct. However, it highlights the friction of whipsaw trades: even with a correct directional bias (the market did not crash), the lack of immediate momentum extension can turn a &quot;win&quot; into a small loss due to spreads and exit mechanics. The downsize helped limit the dollar loss to a negligible amount, which is consistent with the judge&#x27;s risk management intent.</div></article><article id="16031787"><h2>BUY MCD — ma_crossover <span class="badge buy">buy</span></h2><div class=meta>2026-10-22 19:46 UTC · trade 16031787</div><div class=body>### The Opportunity
 This entry is a paper trade on McDonald’s (MCD), executed as a long position of 9 shares at $252.05. The deterministic signal was generated by the `ma_crossover` strategy, which detected that the 10-day Simple Moving Average (SMA10) of $241.80 had crossed above the 30-day SMA (SMA30) of $241.05. While the raw close price of $252.05 is significantly higher than both moving averages, the trigger specifically relies on the intersection of the shorter-term and medium-term averages, indicating a theoretical shift in momentum. The bot identified this as a potential bottoming pattern in a high-quality defensive name, aiming to capture a reversal after the stock recently hit a 4-year low following its Investor Day.
 
 ### Strategy Logic and Failure Modes
