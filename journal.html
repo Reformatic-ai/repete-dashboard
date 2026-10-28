@@ -18,13 +18,29 @@ a{color:#2463eb;text-decoration:none}a:hover{text-decoration:underline}
 .buy{background:#d9f0e0}.close{background:#fdeec8}
 </style></head><body>
 <div class=wrap>
-<h1>trade journal <span class=small>[PAPER] — generated 2026-10-28 13:36 UTC</span></h1>
+<h1>trade journal <span class=small>[PAPER] — generated 2026-10-28 19:47 UTC</span></h1>
 <p class=small>Every trade this bot makes, explained: the opportunity, the
 strategy's logic, the AI judge's view, and the risk plan. Paper trading —
 nothing here is financial advice.
 <a href="index.html">← dashboard</a> ·
 <a href="blog.html">blog</a></p>
-<article id="6219a7f6"><h2>CLOSE SPY — ma_crossover <span class="badge close">close</span></h2><div class=meta>2026-10-27 13:36 UTC · trade 6219a7f6</div><div class=body>**Date:** 2026-09-29
+<article id="ee23dbce"><h2>BUY DIS — meanrev <span class="badge buy">buy</span></h2><div class=meta>2026-10-28 19:46 UTC · trade ee23dbce</div><div class=body>### The Opportunity
+
+This paper trading entry captures a classic mean-reversion setup on DIS. The deterministic strategy triggered a buy signal because the 2-day Relative Strength Index (RSI2) printed at 6.5, dipping below the 10-threshold that defines a short-term oversold condition. Critically, this pullback occurred within an established long-term uptrend, as the closing price of $109.15 remained well above the 200-day simple moving average (SMA) of $103.03. The 5-day SMA of $111.09 was slightly higher than the current close, indicating the stock had recently decoupled from its short-term momentum. The strategy interprets this divergence as a temporary washout rather than a trend reversal, betting that price will revert to its mean over the next few trading sessions.
+
+### The Strategy&#x27;s Logic
+
+The core thesis behind this setup is that short-term selling pressure often overreacts to noise, creating temporary dislocations in stocks with intact long-term fundamentals. The strategy relies on the statistical tendency of oversold stocks in uptrends to snap back. However, this approach has known failure modes. The most significant risk is that a &quot;dip&quot; is actually the beginning of a structural breakdown. If the 200-day SMA support is breached, the reversion thesis fails, and the position becomes a trend-following loss. The recent trade history for similar setups shows a high variance in outcomes; while some trades like CRM and IWM captured meaningful reversion moves, others like NVDA and JNJ resulted in significant drawdowns when the short-term weakness proved to be the start of a longer decline.
+
+### The Judge&#x27;s View
+
+The AI risk-review acknowledged the technical validity of the signal but identified substantial fundamental and contextual risks that warranted a reduction in position size. The review noted that DIS is trading 6% above its 200-day SMA, which provides a technical safety margin, but highlighted specific near-term headwinds. These include recent news regarding FCC censorship claims, a major TV restructuring, and ongoing layoffs. Furthermore, the judge pointed out that the bot had previously rejected or vetoed this specific trade six times in the last few days, suggesting persistent risk factors that the technical signal alone does not resolve. Consequently, the review issued a &quot;downsize&quot; verdict with a 0.5 scale factor. This halved the position size from the initial recommendation, reflecting a confidence level of only 0.55. The logic was that while the pattern is historically profitable, the current noise level and specific news risks make a full-size position too risky for the expected reward.
+
+### The Risk Plan
+
+The position consists of 45 shares of DIS, entered at $109.15. To define the trade as invalid, a volatility-scaled stop-loss was placed at $105.49, approximately 3.3% below the entry price. This stop is designed to be wide enough to avoid being triggered by normal daily noise but tight enough to cap the maximum loss if the reversion thesis fails. There is no take-profit price set; the strategy relies on exiting when the RSI2 recovers to a neutral level or when the price reaches a short-term moving average target.
+
+This is a paper trade. The outcome of this single position will not prove the efficacy of the strategy, nor will a loss invalidate the underlying logic. The risk plan is fixed at entry and will not be adjusted based on subsequent price movements. The goal is to manage risk through size and defined invalidation, not to predict the future price action of DIS.</div></article><article id="6219a7f6"><h2>CLOSE SPY — ma_crossover <span class="badge close">close</span></h2><div class=meta>2026-10-27 13:36 UTC · trade 6219a7f6</div><div class=body>**Date:** 2026-09-29
 **Asset:** SPY (SPDR S&amp;P 500 ETF Trust)
 **Action:** Buy (Long) followed by immediate Strategy Sell
 **Type:** PAPER TRADE (No real capital was at risk)
