@@ -18,13 +18,42 @@ a{color:#2463eb;text-decoration:none}a:hover{text-decoration:underline}
 .buy{background:#d9f0e0}.close{background:#fdeec8}
 </style></head><body>
 <div class=wrap>
-<h1>trade journal <span class=small>[PAPER] — generated 2026-10-29 13:36 UTC</span></h1>
+<h1>trade journal <span class=small>[PAPER] — generated 2026-10-29 19:48 UTC</span></h1>
 <p class=small>Every trade this bot makes, explained: the opportunity, the
 strategy's logic, the AI judge's view, and the risk plan. Paper trading —
 nothing here is financial advice.
 <a href="index.html">← dashboard</a> ·
 <a href="blog.html">blog</a></p>
-<article id="ee23dbce"><h2>BUY DIS — meanrev <span class="badge buy">buy</span></h2><div class=meta>2026-10-28 19:46 UTC · trade ee23dbce</div><div class=body>### The Opportunity
+<article id="de186e01"><h2>BUY CRM — meanrev <span class="badge buy">buy</span></h2><div class=meta>2026-10-29 19:46 UTC · trade de186e01</div><div class=body>**PAPER TRADE JOURNAL**
+**Trade ID:** de186e01
+**Date:** 2026-10-30 (Inferred from context)
+**Asset:** CRM (Salesforce Inc.)
+**Action:** BUY (Entry)
+**Position Size:** 22 Shares
+**Entry Price:** $229.05
+**Stop Loss:** $209.72
+**Status:** OPEN
+
+***
+
+This is a **paper trade**. No real capital is at risk. The following entry documents the logic and risk management of an automated swing-trading algorithm operating in a simulated environment.
+
+### The Opportunity
+The deterministic mean-reversion strategy identified a classic oversold dip in a primary uptrend. CRM closed at $229.05, significantly below its 5-day Simple Moving Average (SMA5) of $241.65, indicating short-term exhaustion or panic selling. The 2-period RSI (RSI2) registered at 5.6, well below the threshold of 10 used by the strategy to signal extreme short-term oversold conditions. Critically, the broader trend remains intact: CRM is trading approximately 15% above its 200-day SMA ($197.68). This divergence between extreme short-term weakness and long-term strength is the specific setup this strategy is designed to capture.
+
+### Strategy Logic
+The core thesis of this trade class is that in a confirmed uptrend (price &gt; SMA200), sharp drops are often overreactions driven by noise rather than fundamental impairment. When RSI2 falls below 10, it suggests selling pressure has been exhausted, creating a high-probability entry for a bounce. The historical data for similar setups in the &quot;up/low&quot; regime (low volatility, bullish trend) supports this: of the ten most similar trades, seven were winners, with returns ranging from +0.4% to +4.0%. However, the failure mode is well-documented. If the &quot;uptrend&quot; is actually breaking down, the dip becomes the start of a new downtrend. Recent losses in NVDA (-6.5%) and JNJ (-3.7%) under identical technical conditions demonstrate that a low RSI2 does not guarantee a floor; it merely marks a point of exhaustion that can be broken through.
+
+### The Judge&#x27;s View
+The AI risk-review approved the trade but applied a **downsize** verdict with a scale factor of 0.5. The reviewer acknowledged the technical strength but flagged a severe macro contradiction. The current market context is hostile: a hawkish Fed hold, hotter-than-expected inflation, and a sharp rotation out of high-multiple tech/AI stocks (exemplified by the Alphabet selloff). The judge noted that the &quot;intact uptrend&quot; assumption is fragile given these macro headwinds. Furthermore, the reviewer cited the bot’s own calibration data, noting an approve accuracy of only 45% (n=62), suggesting that over-trusting technical signals in a changing macro regime leads to losses. The downsize to 50% reflects this caution, acknowledging the technical signal while hedging against the risk that the sector-wide de-rating overrides individual stock resilience.
+
+### The Risk Plan
+**Entry:** $229.05 (22 shares).
+**Stop Loss:** $209.72. This places the stop approximately 8.4% below entry. The stop is set using a volatility-scaled metric (ATR) to ensure it is outside the range of normal daily noise. A break below $209.72 would suggest the dip is not a pause in the uptrend but a resumption of downward momentum, proving the trade wrong.
+**Position Size:** The 22-share position represents a moderate commitment, respecting the judge’s 0.5 scale directive.
+**Invalidation:** The trade is invalid if price closes below the stop, or if the strategy issues a sell signal upon reversion to the mean (typically the SMA5 or a fixed profit target).
+
+This is a single data point (n=1). The outcome will not prove the strategy’s efficacy or lack thereof, only the validity of this specific execution within the current market regime.</div></article><article id="ee23dbce"><h2>BUY DIS — meanrev <span class="badge buy">buy</span></h2><div class=meta>2026-10-28 19:46 UTC · trade ee23dbce</div><div class=body>### The Opportunity
 
 This paper trading entry captures a classic mean-reversion setup on DIS. The deterministic strategy triggered a buy signal because the 2-day Relative Strength Index (RSI2) printed at 6.5, dipping below the 10-threshold that defines a short-term oversold condition. Critically, this pullback occurred within an established long-term uptrend, as the closing price of $109.15 remained well above the 200-day simple moving average (SMA) of $103.03. The 5-day SMA of $111.09 was slightly higher than the current close, indicating the stock had recently decoupled from its short-term momentum. The strategy interprets this divergence as a temporary washout rather than a trend reversal, betting that price will revert to its mean over the next few trading sessions.
 
