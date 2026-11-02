@@ -18,13 +18,33 @@ a{color:#2463eb;text-decoration:none}a:hover{text-decoration:underline}
 .buy{background:#d9f0e0}.close{background:#fdeec8}
 </style></head><body>
 <div class=wrap>
-<h1>trade journal <span class=small>[PAPER] — generated 2026-11-02 14:37 UTC</span></h1>
+<h1>trade journal <span class=small>[PAPER] — generated 2026-11-02 20:47 UTC</span></h1>
 <p class=small>Every trade this bot makes, explained: the opportunity, the
 strategy's logic, the AI judge's view, and the risk plan. Paper trading —
 nothing here is financial advice.
 <a href="index.html">← dashboard</a> ·
 <a href="blog.html">blog</a></p>
-<article id="de186e01"><h2>BUY CRM — meanrev <span class="badge buy">buy</span></h2><div class=meta>2026-10-29 19:46 UTC · trade de186e01</div><div class=body>**PAPER TRADE JOURNAL**
+<article id="ee23dbce"><h2>CLOSE DIS — meanrev <span class="badge close">close</span></h2><div class=meta>2026-11-02 20:46 UTC · trade ee23dbce</div><div class=body>**Paper Trade Journal: DIS Mean Reversion Entry**
+
+**Disclaimer:** This is a **paper trading** simulation. No real capital was deployed. The following analysis is for educational purposes regarding automated strategy logic and does not constitute financial advice.
+
+### The Opportunity
+The deterministic mean-reversion strategy identified a specific setup in Disney (DIS) on October 28, 2026. The trigger was an extreme short-term washout within a broader uptrend. Specifically, the 2-period Relative Strength Index (RSI2) dropped to **6.5**, a level below the strategy’s threshold of 10. This indicates a severe, short-lived sell-off. However, the broader trend remained intact: the closing price of **$109.15** held firmly above the 200-day Simple Moving Average (SMA) of **$103.03**. Additionally, the price was trading below its 5-day SMA of **$111.09**, suggesting immediate momentum had shifted downward but the long-term structural support remained unbroken. The strategy interpreted this divergence between the long-term uptrend and the acute short-term oversold condition as a high-probability entry point for a mean-reverting bounce.
+
+### Strategy Logic and Failure Modes
+This strategy trades on the statistical tendency of prices to revert to their recent average after sharp, low-volume spikes in selling pressure. The underlying logic assumes that panic selling by short-term traders or algorithmic stops creates temporary dislocations from fair value. In an uptrend (defined by price &gt; SMA200), these dips are historically viewed as &quot;buy the dip&quot; opportunities rather than trend reversals.
+
+However, this setup has well-documented failure modes. The primary risk is that a &quot;dip&quot; is actually the beginning of a fundamental trend change. If earnings, macro shocks, or sector rotation drive the price lower, the RSI2 can remain pinned below 10 while the price continues to fall, leading to immediate stop-outs. Another failure mode is &quot;chop,&quot; where the price oscillates around the mean without providing a clear exit signal, eroding returns through time decay or commissions (though negligible in this paper context).
+
+### The Judge’s View
+The AI risk-review model analyzed the technicals against recent context and issued a &quot;downsize&quot; verdict with a scale factor of **0.5**. The review noted that while the RSI2 signal was valid, the historical win rate for similar setups was only 50%. Crucially, the judge flagged specific fundamental headwinds: recent news regarding FCC censorship claims and corporate restructuring. The model also observed that the bot had rejected this specific trade setup six times in the prior days, indicating high noise and uncertainty in the signal. Consequently, the review reduced the position size to mitigate tail risk, citing past losses in similar high-noise environments (e.g., NVDA, JNJ). This conservative sizing reflects a recognition that technical signals alone may not override immediate news-cycle volatility.
+
+### Risk Plan and Outcome
+The trade plan established a fixed stop-loss at **$105.49**, representing a **3.35%** risk per share (approximately **$3.66**). With a position size of **45 shares** (reduced by the 0.5 scale factor), the total position value was **$4,911.75**. The trade was to exit when the price closed above the 5-day SMA, or if the stop was hit, or after a hard cap of 7 days. There was no fixed take-profit; the exit rule dictated the upside.
+
+The trade resulted in a **win**. The entry was executed at **$109.15**, and the position was closed via a strategy sell at **$113.08**. The net profit was **$176.85**, or **3.6%** on the position. This outperformed the benchmark, which was down **-2.55%** over the same period, yielding an alpha of **6.15%**.
+
+It is critical to note that this outcome represents **n=1**. A single winning trade does not prove the strategy&#x27;s efficacy, nor does it validate the judge’s decision to downsize. We do not know if the trade would have been equally successful (or a loss) at full size. The win aligns with the hypothesis that mean-reversion works in uptrends, but it remains a single data point in a much larger sample required to determine statistical significance. Future trades will continue to test whether the 0.5 scaling factor preserves capital without sacrificing excessive returns during valid signals.</div></article><article id="de186e01"><h2>BUY CRM — meanrev <span class="badge buy">buy</span></h2><div class=meta>2026-10-29 19:46 UTC · trade de186e01</div><div class=body>**PAPER TRADE JOURNAL**
 **Trade ID:** de186e01
 **Date:** 2026-10-30 (Inferred from context)
 **Asset:** CRM (Salesforce Inc.)
