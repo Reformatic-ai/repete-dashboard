@@ -18,13 +18,33 @@ a{color:#2463eb;text-decoration:none}a:hover{text-decoration:underline}
 .buy{background:#d9f0e0}.close{background:#fdeec8}
 </style></head><body>
 <div class=wrap>
-<h1>trade journal <span class=small>[PAPER] — generated 2026-11-03 14:38 UTC</span></h1>
+<h1>trade journal <span class=small>[PAPER] — generated 2026-11-04 14:38 UTC</span></h1>
 <p class=small>Every trade this bot makes, explained: the opportunity, the
 strategy's logic, the AI judge's view, and the risk plan. Paper trading —
 nothing here is financial advice.
 <a href="index.html">← dashboard</a> ·
 <a href="blog.html">blog</a></p>
-<article id="ee23dbce"><h2>CLOSE DIS — meanrev <span class="badge close">close</span></h2><div class=meta>2026-11-02 20:46 UTC · trade ee23dbce</div><div class=body>**Paper Trade Journal: DIS Mean Reversion Entry**
+<article id="e549f499"><h2>CLOSE XLE — ma_crossover <span class="badge close">close</span></h2><div class=meta>2026-11-04 14:35 UTC · trade e549f499</div><div class=body>**PAPER TRADING NOTICE**
+The following entry documents a simulated paper trade. No real capital was used, and these results do not constitute financial advice or a prediction of future market performance.
+
+### The Opportunity: XLE Momentum Signal
+On October 14, 2026, the deterministic `ma_crossover` strategy identified a long setup in the Energy Select Sector SPDR Fund (XLE). The core trigger was a crossover event where the 10-day Simple Moving Average (SMA10) at **$64.11** crossed above the 30-day SMA (SMA30) at **$63.77**. This specific configuration signals that short-term momentum is turning upward, potentially outpacing the medium-term trend. At the time of entry, the closing price was **$67.20**. The strategy operates on the principle that when a fast average crosses above a slow one, it often precedes a sustained upward trend, allowing the bot to enter a &quot;trend-following&quot; position with an open-ended holding period.
+
+### Strategy Logic and Failure Modes
+The logic behind trading this class of setup is statistical: in trending markets, &quot;buying breakouts&quot; or &quot;moving average crossovers&quot; captures the bulk of a price move while limiting exposure during sideways churn. However, this strategy has well-documented failure modes. It is particularly vulnerable in volatile, low-trend regimes or when macroeconomic shocks cause rapid reversals. A primary failure mode is the &quot;whipsaw,&quot; where the crossover occurs, the price reverses quickly, and the stop-loss is hit. Additionally, entering during a &quot;up/low&quot; regime—characterized by high volatility and mixed directional signals—increases the probability of noise triggering a false positive. The strategy does not inherently account for fundamental macro shifts, relying solely on price action.
+
+### The Judge’s View
+Before execution, an AI risk-review evaluated the trade. It noted a conflicting macro backdrop: a recent hot CPI print (3.7% YoY) was driving yields higher, which typically pressures cyclical and energy-heavy sectors like XLE. The reviewer also cited a previous lesson from a CAT trade (ID: ls-9bf80e63), where a similar `ma_crossover` entry resulted in a significant loss (-5.3%). 
+
+However, the judge did not veto the trade entirely because the broader market (SPY) remained in an uptrend relative to its own moving average. The verdict was **&quot;downsize&quot;** to a scale of **0.5**, with a confidence score of 0.55. The reasoning was that while the technical signal was present, the macro headwinds and historical pattern of failure in this regime warranted halving the standard position size to mitigate risk without missing a potential genuine energy rally.
+
+### Risk Plan and Outcome
+The risk plan defined a fixed stop-loss at **$64.70**, placing the stop roughly 3.72% below the entry price of $67.20. This placed the risk per share at $2.50. With a position size of 59 shares (total position value ~$3,964.80), the maximum acceptable loss was capped. There was no take-profit target; the trade was designed to be held until either the stop was hit or the SMA10 crossed back below the SMA30.
+
+The trade was executed, but the market moved against the thesis. The price declined, and the position was closed at **$64.69** via the stop-loss trigger. The realized loss was **-$147.78** (-3.73%).
+
+### Analysis of the Result
+This outcome matches the risk plan exactly: the stop worked as intended, capping the loss at the predetermined level. It proves that the risk controls functioned to prevent a larger drawdown. However, it does not prove that the strategy is flawed or that the trade idea was inherently bad; this is n=1. The loss underperformed the benchmark (which was -0.87%) by -2.85%. The result highlights the danger of relying on technical momentum signals in a regime where macroeconomic factors (inflation rates) are dominant. The 0.5 size scale likely preserved capital that would have been lost in a full-size trade, validating the judge&#x27;s conservative adjustment.</div></article><article id="ee23dbce"><h2>CLOSE DIS — meanrev <span class="badge close">close</span></h2><div class=meta>2026-11-02 20:46 UTC · trade ee23dbce</div><div class=body>**Paper Trade Journal: DIS Mean Reversion Entry**
 
 **Disclaimer:** This is a **paper trading** simulation. No real capital was deployed. The following analysis is for educational purposes regarding automated strategy logic and does not constitute financial advice.
 
