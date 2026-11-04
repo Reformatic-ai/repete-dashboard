@@ -18,13 +18,36 @@ a{color:#2463eb;text-decoration:none}a:hover{text-decoration:underline}
 .buy{background:#d9f0e0}.close{background:#fdeec8}
 </style></head><body>
 <div class=wrap>
-<h1>trade journal <span class=small>[PAPER] — generated 2026-11-04 14:38 UTC</span></h1>
+<h1>trade journal <span class=small>[PAPER] — generated 2026-11-04 20:47 UTC</span></h1>
 <p class=small>Every trade this bot makes, explained: the opportunity, the
 strategy's logic, the AI judge's view, and the risk plan. Paper trading —
 nothing here is financial advice.
 <a href="index.html">← dashboard</a> ·
 <a href="blog.html">blog</a></p>
-<article id="e549f499"><h2>CLOSE XLE — ma_crossover <span class="badge close">close</span></h2><div class=meta>2026-11-04 14:35 UTC · trade e549f499</div><div class=body>**PAPER TRADING NOTICE**
+<article id="c013f0b9"><h2>BUY XLE — meanrev <span class="badge buy">buy</span></h2><div class=meta>2026-11-04 20:46 UTC · trade c013f0b9</div><div class=body>**PAPER TRADE JOURNAL: XLE Mean Reversion Entry**
+
+**Disclaimer:** This is a paper trading exercise. No real capital is at risk. The following entry documents the logic, risks, and execution of a simulated trade for educational and analytical purposes only.
+
+### The Opportunity: Technicals vs. Fundamentals
+The deterministic strategy identified a mean-reversion setup in the Energy Select Sector SPDR Fund (XLE). The primary trigger was the 2-day RSI (RSI2) printing at 4.3, well below the 10-level threshold that defines extreme short-term oversold conditions in this model. Crucially, this dip occurred while the long-term trend remained intact, with the close at $63.30 sitting comfortably above the 200-day Simple Moving Average (SMA200) of $58.44. The distance between the current price and the 5-day SMA of $67.19 ($3.89) indicates a sharp, recent pullback rather than a gradual drift, fitting the profile of a &quot;snap-back&quot; candidate.
+
+However, the context for this dip is significant. The pullback coincided with a broader market event: a Democratic sweep of Congress led to expectations of Middle East de-escalation, causing oil prices to plunge. This suggests the drop in XLE is driven by a fundamental shift in the geopolitical premium, not just technical noise.
+
+### Strategy Logic and Failure Modes
+The mean-reversion strategy operates on the premise that short-term overreactions in long-term uptrends often revert. Historically, the bot’s similar trades (RSI2 &lt; 10, uptrend intact) show a 70% hit rate (7 wins, 3 losses) in the provided sample, with wins ranging from +0.4% to +4.0% and losses ranging from -0.7% to -3.7%.
+
+The primary failure mode for this setup is a &quot;regime change.&quot; If the dip is caused by a fundamental break—such as a sustained drop in oil prices due to peace—price will not revert to the mean but will instead re-trend lower, breaking below the SMA200. In this specific case, the geopolitical catalyst introduces a risk that technicals alone may not offset quickly. A second failure mode is correlation risk; the book already holds XOM and XLF, meaning this trade adds exposure to a sector that is currently under fundamental pressure, effectively increasing the book&#x27;s sensitivity to energy headlines.
+
+### The Judge’s View
+The AI risk-review flagged the fundamental mismatch. While acknowledging the robust historical hit rate of the technical setup, the judge noted that the &quot;oil price drop on de-escalation&quot; represents a fundamental driver that technicals may not neutralize. Furthermore, the review cited recent vetoes on XLE and the presence of correlated energy positions in the book. The verdict was to **downsize** the position by 50% (scale 0.5). This reduces the exposure to potential extended downside if the geopolitical peace holds and oil prices remain suppressed.
+
+### The Risk Plan
+*   **Position Size:** 80 shares (half of the standard allocation) at an entry price of $63.295. Total notional value is approximately $5,064.
+*   **Stop Loss:** Placed at $59.83. This is a volatility-scaled stop below the recent support structure and the 200-day SMA buffer. If price closes below this level, the thesis of an &quot;oversold dip in an uptrend&quot; is invalidated, indicating a potential trend reversal.
+*   **Invalidation:** A close below $59.83 proves the trade wrong by confirming that the dip was a trend continuation rather than a reversion.
+*   **Correlation Check:** The book now has increased exposure to energy via XLE and XOM. This is treated as a single macro bet.
+
+This entry tests whether a fundamental shock (geopolitical de-escalation) can override a strong technical mean-reversion signal. The downsized position limits the downside risk if the oil price decline persists.</div></article><article id="e549f499"><h2>CLOSE XLE — ma_crossover <span class="badge close">close</span></h2><div class=meta>2026-11-04 14:35 UTC · trade e549f499</div><div class=body>**PAPER TRADING NOTICE**
 The following entry documents a simulated paper trade. No real capital was used, and these results do not constitute financial advice or a prediction of future market performance.
 
 ### The Opportunity: XLE Momentum Signal
