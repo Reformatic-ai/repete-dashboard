@@ -18,13 +18,33 @@ a{color:#2463eb;text-decoration:none}a:hover{text-decoration:underline}
 .buy{background:#d9f0e0}.close{background:#fdeec8}
 </style></head><body>
 <div class=wrap>
-<h1>trade journal <span class=small>[PAPER] — generated 2026-11-09 14:35 UTC</span></h1>
+<h1>trade journal <span class=small>[PAPER] — generated 2026-11-09 20:46 UTC</span></h1>
 <p class=small>Every trade this bot makes, explained: the opportunity, the
 strategy's logic, the AI judge's view, and the risk plan. Paper trading —
 nothing here is financial advice.
 <a href="index.html">← dashboard</a> ·
 <a href="blog.html">blog</a></p>
-<article id="4081c77e"><h2>CLOSE DIA — ma_crossover <span class="badge close">close</span></h2><div class=meta>2026-11-06 14:35 UTC · trade 4081c77e</div><div class=body>### Trade Event: DIA Long Entry (Paper)
+<article id="de186e01"><h2>CLOSE CRM — meanrev <span class="badge close">close</span></h2><div class=meta>2026-11-09 20:45 UTC · trade de186e01</div><div class=body>**Trade Log: CRM Mean Reversion Entry (Paper Trading)**
+
+This entry documents a paper trading execution for Salesforce (CRM). No real capital was at risk. The position was opened on October 29, 2026, based on a deterministic mean-reversion signal, and was subsequently closed out at a loss. The goal of this journal entry is to analyze the setup, the risk review process, and the outcome with strict objectivity, avoiding hindsight bias or emotional reaction to the loss.
+
+**The Opportunity and Strategy Logic**
+
+The strategy identified a classic &quot;oversold dip in an uptrend&quot; setup. The deterministic rules triggered a buy signal because the 2-period Relative Strength Index (RSI2) dropped to 5.6, well below the threshold of 10, indicating extreme short-term oversold conditions. Crucially, the price at $229.05 remained significantly above the 200-day Simple Moving Average (SMA200) of $197.68. This divergence is the core of the logic: the long-term trend is intact (price &gt; SMA200), but short-term momentum has exhausted itself (RSI2 &lt; 10). The expectation is that price will revert to the mean, specifically targeting a close above the 5-day SMA, which stood at $241.65 at entry. The gap between the entry price and the 5-day SMA ($12.60, or ~5.5%) represented the potential mean-reverting upside.
+
+**The Judge’s View and Sizing**
+
+The AI risk-reviewer did not approve the trade at full size. It issued a &quot;downsize&quot; verdict with a scale factor of 0.5, resulting in a position of 22 shares rather than the maximum allowable. The reviewer’s reasoning highlighted a conflict between the technical setup and the macro environment. While the technicals looked clean, the bear case cited &quot;hostile&quot; macro conditions, specifically hawkish Federal Reserve pressure and a rotation out of high-multiple tech stocks. The reviewer noted that the SMA200 filter is a lagging indicator that might not catch a regime change immediately. By halving the position size, the system acknowledged the probability of a dip but reduced exposure to the tail risk of a deeper sector correction.
+
+**Risk Plan and Execution**
+
+The risk plan was fixed and rigid. The stop-loss was placed at $209.72, representing a risk of $19.33 per share, or approximately 8.44% of the entry price. There was no take-profit order; the exit was contingent on the price closing back above the 5-day SMA or the hard cap of 7 days elapsing. The position was invalidated if the price closed below the stop. The thesis was that the dip was a temporary pause, not a trend reversal.
+
+**Outcome Analysis**
+
+The trade resulted in a loss of $311.85 (-6.19%). The position was exited via `strategy_sell` at $214.875. This outcome indicates that the price did not recover to the 5-day SMA within the holding period and instead continued to drift lower, though it did not hit the hard stop at $209.72.
+
+It is critical to recognize that this is n=1. A single loss does not invalidate the mean-reversion strategy, nor does it prove the macro context was the sole cause. The price moved against the entry, underperforming the benchmark by 4.19%. The &quot;lesson&quot; here is not that RSI2 &lt; 10 fails, but that in a high-volatility macro regime, even strong technical setups can face prolonged drawdowns that exceed the typical mean-reversion window. The 0.5 size scaling limited the damage, preserving capital for future setups. This loss is a data point, not a verdict.</div></article><article id="4081c77e"><h2>CLOSE DIA — ma_crossover <span class="badge close">close</span></h2><div class=meta>2026-11-06 14:35 UTC · trade 4081c77e</div><div class=body>### Trade Event: DIA Long Entry (Paper)
 
 **Status:** Closed (Loss)
 **Date:** 2026-10-20
