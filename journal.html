@@ -18,13 +18,41 @@ a{color:#2463eb;text-decoration:none}a:hover{text-decoration:underline}
 .buy{background:#d9f0e0}.close{background:#fdeec8}
 </style></head><body>
 <div class=wrap>
-<h1>trade journal <span class=small>[PAPER] — generated 2026-11-11 14:35 UTC</span></h1>
+<h1>trade journal <span class=small>[PAPER] — generated 2026-11-11 20:46 UTC</span></h1>
 <p class=small>Every trade this bot makes, explained: the opportunity, the
 strategy's logic, the AI judge's view, and the risk plan. Paper trading —
 nothing here is financial advice.
 <a href="index.html">← dashboard</a> ·
 <a href="blog.html">blog</a></p>
-<article id="de186e01"><h2>CLOSE CRM — meanrev <span class="badge close">close</span></h2><div class=meta>2026-11-09 20:45 UTC · trade de186e01</div><div class=body>**Trade Log: CRM Mean Reversion Entry (Paper Trading)**
+<article id="c013f0b9"><h2>CLOSE XLE — meanrev <span class="badge close">close</span></h2><div class=meta>2026-11-11 20:45 UTC · trade c013f0b9</div><div class=body>**Trade ID:** c013f0b9
+**Symbol:** XLE
+**Action:** CLOSE (Strategy Sell)
+**Result:** Loss (-0.17%)
+**Date:** 2026-11-04
+
+### The Setup: A Technical Snap Back
+
+This entry was executed based on a classic mean-reversion signal within a broader uptrend. The deterministic strategy identified XLE (Energy Select Sector SPDR) with an RSI2 (2-day Relative Strength Index) of 4.3, significantly below the 10-point threshold used for extreme oversold conditions. Crucially, the price of $63.30 remained well above the 200-day Simple Moving Average (SMA200) at $58.44, confirming that the primary trend was still upward despite the sharp pullback. The 5-day SMA was at $67.19, indicating the price had dropped roughly 6% from its recent high in a very short period. The thesis was straightforward: in a healthy uptrend, such extreme short-term weakness often represents emotional overreaction rather than a fundamental trend reversal, creating an opportunity for price to revert toward the mean.
+
+### The Strategy’s Logic and Known Failures
+
+Mean-reversion strategies on short timeframes (like RSI2) exploit the tendency of markets to oscillate around a moving average. The logic is that when price moves too far, too fast, mean-reverting flows will push it back. However, this setup has well-documented failure modes. The primary risk is &quot;catching a falling knife&quot;: if the dip is driven by a fundamental shift rather than noise, the price may not revert but continue to trend downward, breaking below the long-term support levels. Additionally, these trades have short expected holding periods (typically 2–7 days), making them highly sensitive to immediate news flow that can invalidate the technical setup before the reversion has time to occur.
+
+### The Judge’s View and Position Sizing
+
+The AI risk-review flagged a specific fundamental catalyst: energy stocks were sliding due to an oil price drop driven by geopolitical de-escalation. The judge noted that this was a potential structural change in the driver of the recent rally, not just technical noise. Furthermore, the portfolio already held XOM (energy) and XLF (financials), introducing correlated risk. While the historical win rate for RSI2 &lt; 10 in uptrends was cited as strong (7/10), the judge issued a &quot;downsize&quot; verdict with a scale of 0.5 and a confidence of 0.55. This reduced the position size to 80 shares (approximately $5,063 notional value) to account for the possibility that the geopolitical peace would sustain the lower oil prices, preventing a quick technical bounce.
+
+### Risk Plan and Outcome
+
+The risk plan established a fixed stop-loss at $59.83, representing a 5.47% risk per share. There was no take-profit target; the exit rule was purely technical: close the position if the price closed back above the 5-day SMA, if 7 days elapsed, or if the stop was hit.
+
+The trade closed via a &quot;strategy_sell&quot; signal at $63.185, resulting in a small loss of $8.80 (-0.17%). The price did not revert to the 5-day SMA before the strategy exited, likely due to the time-based or signal-based exit criteria being met while the price was still slightly below entry. The exit price was $0.115 below the entry, a negligible difference. Notably, the benchmark for this period dropped -0.88%, meaning this trade generated 0.71% in alpha relative to the index.
+
+### What This Proves (and Doesn’t)
+
+This trade is n=1. It does not prove that RSI2 mean-reversion fails in the face of fundamental news, nor does it prove it works. However, it illustrates the utility of the risk-review layer: by downsizeing the position to 0.5x, the absolute loss was kept minimal despite the thesis not playing out immediately. The trade &quot;lost&quot; in P&amp;L but outperformed the broader market, suggesting that the protective measures functioned as intended. The hypothesis is logged for future review: when fundamental catalysts conflict with technical signals, reduced size often preserves capital while still capturing relative alpha if the trend doesn’t collapse entirely.
+
+*Note: This is a paper trading record. No real capital was at risk.*</div></article><article id="de186e01"><h2>CLOSE CRM — meanrev <span class="badge close">close</span></h2><div class=meta>2026-11-09 20:45 UTC · trade de186e01</div><div class=body>**Trade Log: CRM Mean Reversion Entry (Paper Trading)**
 
 This entry documents a paper trading execution for Salesforce (CRM). No real capital was at risk. The position was opened on October 29, 2026, based on a deterministic mean-reversion signal, and was subsequently closed out at a loss. The goal of this journal entry is to analyze the setup, the risk review process, and the outcome with strict objectivity, avoiding hindsight bias or emotional reaction to the loss.
 
