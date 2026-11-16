@@ -18,13 +18,54 @@ a{color:#2463eb;text-decoration:none}a:hover{text-decoration:underline}
 .buy{background:#d9f0e0}.close{background:#fdeec8}
 </style></head><body>
 <div class=wrap>
-<h1>trade journal <span class=small>[PAPER] — generated 2026-11-16 14:35 UTC</span></h1>
+<h1>trade journal <span class=small>[PAPER] — generated 2026-11-16 20:46 UTC</span></h1>
 <p class=small>Every trade this bot makes, explained: the opportunity, the
 strategy's logic, the AI judge's view, and the risk plan. Paper trading —
 nothing here is financial advice.
 <a href="index.html">← dashboard</a> ·
 <a href="blog.html">blog</a></p>
-<article id="c013f0b9"><h2>CLOSE XLE — meanrev <span class="badge close">close</span></h2><div class=meta>2026-11-11 20:45 UTC · trade c013f0b9</div><div class=body>**Trade ID:** c013f0b9
+<article id="b221e3c6"><h2>BUY AMZN — meanrev <span class="badge buy">buy</span></h2><div class=meta>2026-11-16 20:46 UTC · trade b221e3c6</div><div class=body>**Trade Event: BUY AMZN (Paper Trading)**
+**Trade ID:** b221e3c6
+**Regime:** Down/Mid
+
+This entry is part of an automated paper-trading simulation. No real capital is at risk, and the following analysis reflects a deterministic risk-management framework rather than financial advice.
+
+### The Opportunity
+The mean-reversion strategy triggered a buy signal on AMZN based on a specific confluence of technical indicators. The 2-period Relative Strength Index (RSI2) printed at 8.3, well below the strategy&#x27;s threshold of 10. Simultaneously, the closing price of $257.96 remained significantly above the 200-day Simple Moving Average (SMA) of $244.69. While the 5-day SMA of $265.82 indicates recent downward pressure, the price action relative to the long-term trend filter suggests a sharp, short-term deviation rather than a structural break. The strategy interprets this as an &quot;oversold dip in an uptrend,&quot; a setup historically designed to capture the reversion to the mean when momentum stalls temporarily against the broader directional bias.
+
+### Strategy Logic and Failure Modes
+The logic underpinning this trade class relies on the statistical tendency for extreme short-term readings to mean-revert, provided the long-term trend is intact. The SMA200 acts as the primary regime filter; a price above it suggests the asset is in a long-term bull market, making dips higher probability buys than in a downtrend. However, this strategy has well-documented failure modes. It performs poorly when an &quot;oversold&quot; condition is actually the initial leg of a trend reversal. If the macro environment shifts from defensive to risk-off, the SMA200 may not provide sufficient support, and the price can continue to grind lower, invalidating the mean-reversion thesis. The current regime is classified as &quot;down/mid,&quot; with the SPY index trading below its own 200-day SMA, which is a significant headwind for this specific setup.
+
+### The Judge&#x27;s View
+The AI risk-review assigned a &quot;downsize&quot; verdict with a 0.55 confidence score. The judge highlighted a critical mismatch between the stock&#x27;s long-term technicals and the prevailing macro regime. With the Nasdaq 100 down nearly 3% due to tech-specific risk-off sentiment and Nvidia-related headlines, the judge argued that the probability of this dip being a genuine reversal is elevated. Furthermore, the review cited a recent history of &quot;BAD_APPROVE&quot; events in similar mean-reversion setups within this regime, where full-size positions resulted in significant drawdowns. The 0.3 scale factor was applied to acknowledge the technical validity of the RSI2 signal while explicitly respecting the elevated macro risk and the bot&#x27;s recent calibration errors.
+
+### Risk Plan and Invalidation
+The position size was limited to 11 shares, reflecting the 0.3 scale-down from the standard allocation. This keeps total exposure modest relative to the $101,114 paper equity. The hard stop-loss is placed at $235.90, approximately 8.5% below the entry price. This placement is volatility-scaled and sits below recent support levels. The trade is proven wrong if AMZN closes below this stop, indicating that the &quot;oversold&quot; condition was, in fact, the start of a deeper correction. There is no take-profit limit; the strategy relies on the mean-reversion target or a trailing stop to exit once the RSI2 recovers or the price stalls. This is a single data point (n=1) in the bot&#x27;s learning loop; the outcome will either validate the caution of the downsize or highlight the cost of regime-based skepticism.</div></article><article id="75761b09"><h2>BUY SPY — meanrev <span class="badge buy">buy</span></h2><div class=meta>2026-11-16 20:45 UTC · trade 75761b09</div><div class=body>**PAPER TRADING ENTRY: SPY Long (Trade ID: 75761b09)**
+
+This is a simulated paper trade. No real capital is at risk. The automated swing-trading bot has initiated a long position in SPY based on a deterministic mean-reversion signal.
+
+### The Opportunity
+
+The strategy identified a classic &quot;oversold dip in an uptrend&quot; setup. The 2-day Relative Strength Index (RSI2) compressed to **9.4**, falling below the strict threshold of 10. This indicates extreme short-term exhaustion. Despite this sharp pullback, the long-term trend structure remains intact, with the closing price of **$738.85** sitting above the 200-day Simple Moving Average (SMA200) at **$729.57**. The primary thesis is that while the index is currently under severe pressure—evidenced by the price being well below the 5-day SMA at **$752.01**—the macro uptrend should eventually reassert itself, offering a high-probability reversion to the mean.
+
+### The Strategy&#x27;s Logic
+
+Mean-reversion strategies trade the statistical tendency of assets to revert to their average value after extreme deviations. The specific edge here relies on the divergence between the short-term panic (RSI2 &lt; 10) and the long-term strength (Price &gt; SMA200). Historically, this setup has produced significant gains in broad indices when the long-term trend is unbroken.
+
+However, the known failure mode is &quot;trend continuation.&quot; If the macro regime shifts from a bull market to a bear market, an &quot;oversold&quot; reading is not a floor but a signal of further downside. A dip in a downtrend is trend, not oversold. This is the critical distinction the strategy attempts to make using the SMA200 filter.
+
+### The Judge&#x27;s View
+
+The AI risk-review (Qwen3.8-27b) flagged significant contradictions to the &quot;uptrend&quot; premise. It noted that SPY is currently in a **down/mid regime** (price below SMA50 and SMA5), driven by fresh, severe risk-off news including a corporate governance scandal at Nvidia and hawkish Fed rhetoric.
+
+The review noted that 5 out of the last 10 similar trades were losses, with notable drawdowns in AMD (-8.8%) and NVDA (-6.5%). The judge reasoned that while past instances of RSI2 &lt; 10 have produced large gains, the active news catalyst and the current technical regime suggest a higher risk of the trade failing. Consequently, the judge issued a **&quot;downsize&quot;** verdict with a **0.3 scale factor** and low confidence (0.55). This shape the position size to a minimal 3 shares, limiting exposure while still capturing a portion of the potential upside if the mean reversion holds.
+
+### The Risk Plan
+
+*   **Position Size:** 3 shares at **$738.85** (Total value ~$2,216).
+*   **Stop Loss:** Set at **$711.84**. This is a volatility-scaled stop, positioned below recent support to allow for normal daily noise.
+*   **Invalidation:** The trade is proven wrong if SPY closes below the stop price. The stop is static and will not be widened.
+*   **Outcome Context:** One trade is n=1. The outcome of this specific trade will not prove or disprove the overall efficacy of the RSI2 mean-reversion strategy. It is a single data point in a long-term statistical sampling process.</div></article><article id="c013f0b9"><h2>CLOSE XLE — meanrev <span class="badge close">close</span></h2><div class=meta>2026-11-11 20:45 UTC · trade c013f0b9</div><div class=body>**Trade ID:** c013f0b9
 **Symbol:** XLE
 **Action:** CLOSE (Strategy Sell)
 **Result:** Loss (-0.17%)
