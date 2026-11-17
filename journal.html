@@ -18,13 +18,23 @@ a{color:#2463eb;text-decoration:none}a:hover{text-decoration:underline}
 .buy{background:#d9f0e0}.close{background:#fdeec8}
 </style></head><body>
 <div class=wrap>
-<h1>trade journal <span class=small>[PAPER] — generated 2026-11-17 14:35 UTC</span></h1>
+<h1>trade journal <span class=small>[PAPER] — generated 2026-11-17 20:46 UTC</span></h1>
 <p class=small>Every trade this bot makes, explained: the opportunity, the
 strategy's logic, the AI judge's view, and the risk plan. Paper trading —
 nothing here is financial advice.
 <a href="index.html">← dashboard</a> ·
 <a href="blog.html">blog</a></p>
-<article id="b221e3c6"><h2>BUY AMZN — meanrev <span class="badge buy">buy</span></h2><div class=meta>2026-11-16 20:46 UTC · trade b221e3c6</div><div class=body>**Trade Event: BUY AMZN (Paper Trading)**
+<article id="da84f728"><h2>BUY JPM — meanrev <span class="badge buy">buy</span></h2><div class=meta>2026-11-17 20:45 UTC · trade da84f728</div><div class=body>### Paper Trade Entry: JPM
+
+This is a paper trading simulation. No real capital is at risk.
+
+The opportunity identified by the deterministic `meanrev` strategy is a textbook oversold dip within an intact long-term uptrend. At the time of entry, JPM was trading at **$330.41**, holding firmly above its 200-day Simple Moving Average (**$322.75**). This price action confirms that the broader structural trend remains bullish despite recent short-term weakness. The trigger for the trade was the 2-day Relative Strength Index (**RSI2**) reading **8.2**, a value well below the strategy’s threshold of 10. In this specific context, the RSI2 signals that the asset has become temporarily exhausted in the short term relative to its recent range, creating a statistical edge for a mean-reversion move back toward the local mean. While the 5-day SMA sits higher at **$340.2**, indicating the dip is currently significant, the strategy trades the probability that this extreme short-term readout is a temporary deviation rather than a trend reversal.
+
+The logic behind trading this setup relies on the asymmetry of risk: by buying an asset that has recently fallen sharply but remains above its long-term support (SMA200), the trader accepts a known, bounded loss scenario if the trend actually breaks down. Conversely, the potential upside is a recovery toward recent highs. However, this class of setup has well-documented failure modes. The primary risk is that an &quot;oversold&quot; condition in a large-cap financial is often the beginning of a deeper structural correction, not a blip. If the broader market continues to deteriorate, the SMA200 can be breached, turning a mean-reversion trade into a trend-following loss. Additionally, in a &quot;down/mid&quot; market regime, beta exposure to the index can drag the stock lower regardless of its individual oversold status.
+
+The AI risk-review judge viewed this signal with caution. The judge noted that while the specific metrics (RSI2 &lt; 10, Price &gt; SMA200) align with historically successful trades, the current market regime is &quot;down/mid&quot; with elevated volatility (23%). The judge highlighted that the bot’s recent &quot;approve&quot; accuracy is low at 43%, and that several recent similar mean-reversion entries in large-cap tech and financials (NVDA, AMD, AVGO) resulted in significant losses of -6% to -8%. Consequently, the judge issued a &quot;downsize&quot; verdict with a scale of 0.5 and a confidence of 0.55. This decision shaped the final position size directly; the entry was scaled down to **15 shares** rather than the full theoretical size, reflecting a reduced conviction that the specific setup will succeed in the current volatile, risk-off environment.
+
+The risk plan is defined by a strict stop-loss placed at **$313.40**. This invalidation level is set below recent support and the SMA200, effectively capping the maximum loss if the uptrend thesis is proven wrong. The position is sized to ensure that a stop-out results in a manageable drawdown relative to the total paper account equity. The trade is considered &quot;wrong&quot; if the price closes below the stop level, signaling that the dip is a continuation of a downtrend rather than a temporary pullback. There is no take-profit price set; the trade will exit via the stop-loss or a subsequent signal from the strategy indicating the mean reversion has completed. This entry represents a single data point (n=1) in the strategy&#x27;s backtest and live simulation, and the outcome will not change the underlying probability distribution of the method.</div></article><article id="b221e3c6"><h2>BUY AMZN — meanrev <span class="badge buy">buy</span></h2><div class=meta>2026-11-16 20:46 UTC · trade b221e3c6</div><div class=body>**Trade Event: BUY AMZN (Paper Trading)**
 **Trade ID:** b221e3c6
 **Regime:** Down/Mid
 
