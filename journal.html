@@ -18,13 +18,27 @@ a{color:#2463eb;text-decoration:none}a:hover{text-decoration:underline}
 .buy{background:#d9f0e0}.close{background:#fdeec8}
 </style></head><body>
 <div class=wrap>
-<h1>trade journal <span class=small>[PAPER] — generated 2026-11-17 20:46 UTC</span></h1>
+<h1>trade journal <span class=small>[PAPER] — generated 2026-11-18 14:36 UTC</span></h1>
 <p class=small>Every trade this bot makes, explained: the opportunity, the
 strategy's logic, the AI judge's view, and the risk plan. Paper trading —
 nothing here is financial advice.
 <a href="index.html">← dashboard</a> ·
 <a href="blog.html">blog</a></p>
-<article id="da84f728"><h2>BUY JPM — meanrev <span class="badge buy">buy</span></h2><div class=meta>2026-11-17 20:45 UTC · trade da84f728</div><div class=body>### Paper Trade Entry: JPM
+<article id="0b17266c"><h2>BUY HD — meanrev <span class="badge buy">buy</span></h2><div class=meta>2026-11-18 14:36 UTC · trade 0b17266c</div><div class=body>### Paper Trade Entry: Home Depot (HD)
+
+**Disclaimer: This is a paper trade. No real capital is at risk. The following analysis is for educational and record-keeping purposes only.**
+
+#### The Opportunity
+The deterministic `meanrev` strategy identified a potential entry in Home Depot (HD) at **$339.01** for a quantity of 8 shares. The core technical signal was an extreme oversold condition, evidenced by the 2-day Relative Strength Index (**RSI2**) sitting at **3.3**, well below the strategy’s threshold of 10. This dip occurred while price remained above the 200-day Simple Moving Average (**SMA200**) at **$329.16**, which the strategy interprets as an &quot;intact&quot; long-term uptrend. However, the short-term momentum was clearly negative, with the 5-day SMA at **$346.96** sitting comfortably above the current close, indicating recent downward pressure.
+
+#### Strategy Logic and Failure Modes
+This setup trades the premise that extreme short-term pessimism (RSI2 &lt; 10) in a fundamentally sound, long-term uptrending asset usually resolves back toward the mean. The known failure mode, however, is buying &quot;a dip in a downtrend.&quot; If the market regime has fundamentally shifted, the SMA200 acts as a resistance level that the price may break through, turning a temporary dip into a structural trend change. In such cases, the RSI can remain &quot;oversold&quot; for extended periods as the price continues to decline, rendering the mean-reversion thesis obsolete.
+
+#### The Judge’s View
+The AI risk-review assigned a verdict of **downsize** with a scale factor of **0.3** and a confidence score of **0.55**. The judge acknowledged the textbook technicals but heavily weighted the current market regime, which is **down/mid** (SPY below its SMA), contradicting the strategy’s assumption of an intact uptrend. Furthermore, the judge noted specific fundamental headwinds: a recent downgrade by Stifel to Sell, deteriorating homebuilder sentiment at 14-year lows, and the bot’s own history of vetoing HD four times in the last two months. The review concluded that while the technicals are strong, the fundamental and regime context made a full-size approval inappropriate, capping the exposure to mitigate the risk of a broken trend.
+
+#### Risk Plan
+The position size was reduced to 8 shares based on the 0.3 scale factor, reflecting the low confidence in the setup&#x27;s survival. A protective stop-loss was placed at **$318.01**, approximately 6.2% below the entry price. This stop is designed to invalidate the trade if the price breaks below the SMA200 with momentum, confirming a trend reversal. There is no take-profit target set, meaning the trade will be managed according to the strategy&#x27;s exit rules (e.g., RSI2 recovery or time-based exit). The trade is proven wrong if HD continues to trade below the SMA200 or if the broader market&#x27;s &quot;down/mid&quot; regime exerts further downward pressure on consumer cyclicals, causing the stop-loss to be triggered.</div></article><article id="da84f728"><h2>BUY JPM — meanrev <span class="badge buy">buy</span></h2><div class=meta>2026-11-17 20:45 UTC · trade da84f728</div><div class=body>### Paper Trade Entry: JPM
 
 This is a paper trading simulation. No real capital is at risk.
 
