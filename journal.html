@@ -18,13 +18,86 @@ a{color:#2463eb;text-decoration:none}a:hover{text-decoration:underline}
 .buy{background:#d9f0e0}.close{background:#fdeec8}
 </style></head><body>
 <div class=wrap>
-<h1>trade journal <span class=small>[PAPER] — generated 2026-11-18 14:36 UTC</span></h1>
+<h1>trade journal <span class=small>[PAPER] — generated 2026-11-18 20:47 UTC</span></h1>
 <p class=small>Every trade this bot makes, explained: the opportunity, the
 strategy's logic, the AI judge's view, and the risk plan. Paper trading —
 nothing here is financial advice.
 <a href="index.html">← dashboard</a> ·
 <a href="blog.html">blog</a></p>
-<article id="0b17266c"><h2>BUY HD — meanrev <span class="badge buy">buy</span></h2><div class=meta>2026-11-18 14:36 UTC · trade 0b17266c</div><div class=body>### Paper Trade Entry: Home Depot (HD)
+<article id="b221e3c6"><h2>CLOSE AMZN — meanrev <span class="badge close">close</span></h2><div class=meta>2026-11-18 20:46 UTC · trade b221e3c6</div><div class=body>**Date:** November 16, 2026
+**Trade:** AMZN (Paper Trading)
+**Action:** Entry &amp; Exit Completed
+**Status:** Win (+3.33%)
+
+This entry documents a completed paper trade in AMZN. All positions in this journal are simulated; no real capital was deployed.
+
+### The Opportunity
+The deterministic mean-reversion strategy identified a statistically rare oversold condition in a fundamentally strong name. At the time of the signal, AMZN closed at $257.96. The key trigger was the RSI(2) indicator reading 8.3, falling below the threshold of 10. This extreme short-term weakness occurred while the price remained comfortably above the 200-day Simple Moving Average (SMA) of $244.69, indicating that the long-term uptrend was intact. The 5-day SMA was higher at $265.82, suggesting the price had pulled back significantly from its recent momentum. The strategy interpreted this divergence—deep short-term oversold metrics within a preserved long-term trend—as a high-probability setup for a snap-back to the mean.
+
+### Strategy Logic and Failure Modes
+This class of setup, often called a &quot;pullback in an uptrend,&quot; relies on the statistical tendency of equities to revert to their moving averages after overextended moves. The logic assumes that selling pressure is temporary and driven by noise rather than a fundamental shift. However, the known failure mode is a regime change. When the broader market or a specific sector undergoes a structural rotation, a &quot;dip&quot; can actually be the beginning of a sustained downtrend. In this case, the market context was tagged as &quot;down/mid,&quot; with specific headwinds in the tech/AI sector. If the RSI(2) reading signaled a value trap rather than an opportunity, the price would have continued to drift lower, violating the uptrend assumption and triggering the stop-loss.
+
+### The Judge’s View
+The AI risk review flagged significant macro risks, noting that the broader market environment and sector-specific concerns increased the probability that the dip was a trend reversal. The review cited a recent calibration record of poor performance on similar mean-reversion entries during &quot;down/mid&quot; regimes. Consequently, the judge issued a &quot;downsize&quot; verdict with a scale factor of 0.3. This decision shaped the position size significantly, reducing the exposure to a mere 11 shares (approximately $2,837 notional value) rather than the full intended allocation. This conservative sizing acknowledged the technical validity of the RSI signal while respecting the elevated macro risk.
+
+### Risk Plan and Outcome
+The risk plan established a fixed stop-loss at $235.90, representing a 8.55% risk per share. There was no fixed take-profit; the strategy was designed to exit as soon as the price closed back above the 5-day SMA, or after a maximum of 7 days. The trade proved the strategy correct in the short term. AMZN exited at $266.55 via the &quot;strategy_sell&quot; rule, generating a profit of $94.44 (+3.33%). This result outperformed the benchmark, which was down 1.26% over the same period, yielding 4.58% alpha.
+
+It is crucial to note that this is a single event ($n=1$). One winning trade does not validate the strategy, nor does it prove that mean reversion is effective in &quot;down/mid&quot; regimes. It simply demonstrates that the 0.3 size scaling successfully captured a short-term bounce while limiting downside exposure. The outcome supports the specific lesson hypothesis that this configuration may be viable, but it does not establish a durable edge. Future entries will require consistent performance across multiple instances to confirm this pattern.</div></article><article id="53edb5e6"><h2>BUY XLE — meanrev <span class="badge buy">buy</span></h2><div class=meta>2026-11-18 20:46 UTC · trade 53edb5e6</div><div class=body>**Entry: XLE Mean-Reversion Dip (Paper Trading)**
+
+This entry is strictly a paper trade. No real capital is at risk. The bot initiated a buy order for 48 shares of the Energy Select Sector SPDR Fund (XLE) at **$61.54**. The core thesis is a classic mean-reversion setup: buying an asset that has become statistically oversold within a broader, longer-term uptrend.
+
+**The Opportunity**
+The deterministic strategy flagged a specific confluence of indicators. The primary trigger was the 2-day Relative Strength Index (**RSI2**) hitting **7.3**, well below the strategy’s threshold of 10. This indicates a sharp, short-term decline in price momentum. Crucially, this dip occurred while the price remained above the 200-day Simple Moving Average (**SMA200**) of **$59.13**. The 5-day SMA was **$63.58**, showing that the current price is slightly below recent short-term averages but still well above the long-term trend anchor. The logic is that XLE has pulled back from its recent highs due to sector-specific volatility, but the fundamental uptrend remains intact, suggesting a reversion toward the mean is probable.
+
+**Strategy Logic &amp; Failure Modes**
+This strategy relies on the statistical tendency for prices to regress toward their average after extreme short-term moves. It is traded because it captures &quot;dips&quot; in healthy trends. However, it has a well-documented failure mode: catching a falling knife during a regime shift. If the &quot;uptrend&quot; is actually the early stages of a broader correction, the RSI2 will stay oversold for an extended period, and the SMA200 will eventually break. The historical data provided is mixed; while there are wins (e.g., AMZN +5.52%, DIS +3.60%), there are significant losses (e.g., NVDA -6.47%, CRM -6.18%), particularly when market sentiment turns negative.
+
+**The Judge’s View**
+The AI risk-reviewer issued a **downsize** verdict with a scale factor of **0.3** and confidence of **0.55**. The judge’s reasoning highlights a critical conflict: the local XLE uptrend exists in isolation against a **down/mid** broad market regime (SPY is below its SMA200). The judge noted that mean-reversion attempts often fail in bearish or weak index environments, citing recent losses in NVDA and AMD. Furthermore, the judge’s own approval accuracy is low (43%), suggesting a cautious approach is warranted. The judge viewed the XLE rally as potentially being a sector-specific anomaly driven by oil price news (Middle East tensions) rather than a robust, self-sustaining trend, making it vulnerable to a sharp reversal if the macro environment deteriorates.
+
+**Risk Plan**
+Reflecting the judge’s downsize, the final position size was reduced. The stop-loss is placed at **$57.92**, which is below the critical SMA200 support level of $59.13 and accounts for normal volatility. This stop placement means that if the price breaks the long-term uptrend anchor, the trade is invalidated.
+
+**What Would Prove This Wrong**
+The thesis is proven wrong if XLE closes below the $57.92 stop, indicating the &quot;dip&quot; was actually the start of a trend reversal. It is also wrong if the position is stopped out due to volatility, even if the initial uptrend logic was sound. One trade is n=1; this entry does not prove the strategy’s efficacy, only that the rules were followed in a high-risk regime mismatch.</div></article><article id="7affdef1"><h2>CLOSE UNH — ma_crossover <span class="badge close">close</span></h2><div class=meta>2026-11-18 20:45 UTC · trade 7affdef1</div><div class=body>**Paper Trade Log: UNH Short Entry (Reversal Context)**
+
+*Note: This entry documents an automated **PAPER TRADING** event. No real capital was at risk. All values are simulated for strategy evaluation.*
+
+### The Opportunity
+The deterministic `ma_crossover` strategy identified a potential momentum shift in UnitedHealth Group (UNH) during an `up/low` regime. The trigger condition was specific: the 10-day Simple Moving Average (SMA10) at **$381.16** crossed above the 30-day SMA (SMA30) at **$380.06**. This crossover indicated that short-term momentum was turning upward relative to the medium-term trend.
+
+However, the context was anomalous. The current close price was **$406.67**, significantly above both moving averages. The strategy interpreted this as a bullish confirmation entry, despite the large gap between the price and the signal lines. The tight spread between the two moving averages—less than 0.3%—suggested a low-volatility environment where the trend was only just beginning to establish itself.
+
+### Strategy Logic and Failure Modes
+The logic behind trading SMA crossovers relies on the premise that when the fast average crosses the slow average, it signals a change in the direction of price momentum. This setup is traded to capture the early stages of a trend.
+
+Known failure modes for this strategy include:
+1.  **Choppy Markets:** In low-volatility or &quot;up/low&quot; regimes, tight crossovers often result in false signals where the price reverses quickly before establishing a true trend.
+2.  **Signal Lag:** By the time the crossover occurs, a significant portion of the price move may have already happened, leading to poor risk-to-reward ratios if the price does not continue.
+3.  **Tight Spread Weakness:** A spread of &lt;0.3% offers very little statistical separation between the two averages, making the signal highly susceptible to noise. Recent trades in AVGO and CAT with similar tight spreads resulted in stop-outs, indicating a pattern of failure in this specific configuration.
+
+### The Judge’s View
+The AI risk-review explicitly flagged the weakness of this setup. It noted that while UNH had recently beat earnings, the technical signal was &quot;extremely tight&quot; and historically unreliable. The judge highlighted that UNH had been rejected or vetoed in the previous two weeks, suggesting persistent structural issues or price discovery uncertainty that the simple crossover rule ignores.
+
+Consequently, the review issued a **downsize** verdict with a size scale of **0.3** and a low confidence score of **0.48**. The reasoning cited the strategy’s poor calibration (46% approval rate) and the specific history of failures on tight-spread crossovers. This judgment shaped the position size, reducing the exposure from a standard unit to a minimal one to mitigate the high probability of a quick reversal.
+
+### Risk Plan and Outcome
+**The Plan:**
+*   **Entry:** $406.67
+*   **Position Size:** 5 shares (reduced from standard size)
+*   **Stop Loss:** $382.82
+*   **Risk per Share:** $23.85 (~5.86% of entry price)
+*   **Invalidation:** The trade was defined as wrong if the price closed below the fixed stop at $382.82. There was no take-profit target; the exit was determined solely by the stop or a reverse crossover.
+
+**The Result:**
+The trade was **closed at a loss**.
+*   **Exit Price:** $382.69
+*   **PnL:** -$119.90 (-5.9%)
+*   **Benchmark PnL:** -4.27%
+*   **Alpha:** -1.63%
+
+The price hit the stop loss, confirming the judge&#x27;s skepticism. The tight SMA spread failed to support a sustained upward move, and the price reverted to the lower volatility zone around the SMA levels. This single trade (n=1) reinforces the lesson hypothesis: entering `ma_crossover` buys in an `up/low` regime with a tight SMA spread and reduced size scale is prone to stop-outs and underperformance against the benchmark. It does not prove the strategy is broken, but it validates the need for the downsizing mechanism in low-conviction environments.</div></article><article id="0b17266c"><h2>BUY HD — meanrev <span class="badge buy">buy</span></h2><div class=meta>2026-11-18 14:36 UTC · trade 0b17266c</div><div class=body>### Paper Trade Entry: Home Depot (HD)
 
 **Disclaimer: This is a paper trade. No real capital is at risk. The following analysis is for educational and record-keeping purposes only.**
 
