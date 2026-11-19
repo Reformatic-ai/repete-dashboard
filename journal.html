@@ -18,13 +18,27 @@ a{color:#2463eb;text-decoration:none}a:hover{text-decoration:underline}
 .buy{background:#d9f0e0}.close{background:#fdeec8}
 </style></head><body>
 <div class=wrap>
-<h1>trade journal <span class=small>[PAPER] — generated 2026-11-18 20:47 UTC</span></h1>
+<h1>trade journal <span class=small>[PAPER] — generated 2026-11-19 14:36 UTC</span></h1>
 <p class=small>Every trade this bot makes, explained: the opportunity, the
 strategy's logic, the AI judge's view, and the risk plan. Paper trading —
 nothing here is financial advice.
 <a href="index.html">← dashboard</a> ·
 <a href="blog.html">blog</a></p>
-<article id="b221e3c6"><h2>CLOSE AMZN — meanrev <span class="badge close">close</span></h2><div class=meta>2026-11-18 20:46 UTC · trade b221e3c6</div><div class=body>**Date:** November 16, 2026
+<article id="b5a43a45"><h2>BUY ABBV — meanrev <span class="badge buy">buy</span></h2><div class=meta>2026-11-19 14:36 UTC · trade b5a43a45</div><div class=body>### Paper Trade Journal: ABBV Entry
+
+**Disclaimer:** This entry documents a simulated transaction. No real capital was at risk, and these results do not constitute financial advice or predictions of future performance.
+
+**The Opportunity**
+The deterministic strategy identified a classic mean-reversion setup in AbbVie (ABBV). At the time of entry, the 2-period RSI (RSI2) had collapsed to 1.9, a value well below the strategy’s trigger threshold of 10. Despite this short-term oversold reading, the long-term trend remained intact, with the closing price of $286.01 sitting significantly above the 200-period Simple Moving Average (SMA200) of $239.25. The stock was trading approximately 19.5% above its long-term baseline. Additionally, the price was 2.2% below the 5-period SMA ($292.57), confirming a recent pullback. The thesis was straightforward: a sharp, short-term dip in a strong, long-term uptrend would likely reverse toward the mean.
+
+**Strategy Logic and Failure Modes**
+This approach relies on the statistical tendency of price to revert after extreme short-term moves, provided the macro-trend is bullish. The logic holds that the 200 SMA acts as a structural floor; as long as price remains above it, &quot;oversold&quot; is often a temporary liquidity event rather than a fundamental shift. However, this strategy has a well-documented failure mode: it ignores the broader market regime. In a &quot;down/mid&quot; regime—where SPY is below its own SMA200—correlated selling pressure can drag even high-quality names below their long-term supports. Past evidence in this journal shows that similar setups in weak regimes (e.g., NVDA, XLK) have resulted in losses ranging from -3.2% to -6.5%, as the &quot;uptrend&quot; fails to hold the line against macro headwinds.
+
+**Judge’s Review and Sizing**
+The AI risk-review acknowledged the symbol-specific strength (ABBV is 19% above SMA200) but flagged the current market environment as the primary risk. Hawkish Fed minutes and a general market decline created a headwind. Noting that previous similar trades in this specific regime had failed, the judge issued a &quot;downsize&quot; verdict with a scale factor of 0.3. This reduced the intended position size to 10 shares. The judge’s reasoning balanced the high-probability symbol setup against the low-probability macro environment, opting for participation with limited capital risk rather than a full conviction entry.
+
+**Risk Plan and Invalidation**
+The entry price was $286.01. A hard stop-loss was placed at $271.13, representing a risk of approximately 5.2%. This stop is set below recent swing lows to avoid being triggered by normal daily noise. There is no explicit take-profit; the strategy relies on a time-based exit or a signal-based sell (e.g., RSI2 rising above a neutral level). The trade is proven wrong if ABBV breaks below $271.13, indicating that the dip was not a pullback but the beginning of a deeper trend break. With 13 open positions and gross exposure at 46% of equity, this 10-share position adds minimal correlated risk to the existing Healthcare sector holdings (LLY, XLV).</div></article><article id="b221e3c6"><h2>CLOSE AMZN — meanrev <span class="badge close">close</span></h2><div class=meta>2026-11-18 20:46 UTC · trade b221e3c6</div><div class=body>**Date:** November 16, 2026
 **Trade:** AMZN (Paper Trading)
 **Action:** Entry &amp; Exit Completed
 **Status:** Win (+3.33%)
