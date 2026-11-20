@@ -18,13 +18,35 @@ a{color:#2463eb;text-decoration:none}a:hover{text-decoration:underline}
 .buy{background:#d9f0e0}.close{background:#fdeec8}
 </style></head><body>
 <div class=wrap>
-<h1>trade journal <span class=small>[PAPER] — generated 2026-11-19 20:45 UTC</span></h1>
+<h1>trade journal <span class=small>[PAPER] — generated 2026-11-20 14:36 UTC</span></h1>
 <p class=small>Every trade this bot makes, explained: the opportunity, the
 strategy's logic, the AI judge's view, and the risk plan. Paper trading —
 nothing here is financial advice.
 <a href="index.html">← dashboard</a> ·
 <a href="blog.html">blog</a></p>
-<article id="b5a43a45"><h2>BUY ABBV — meanrev <span class="badge buy">buy</span></h2><div class=meta>2026-11-19 14:36 UTC · trade b5a43a45</div><div class=body>### Paper Trade Journal: ABBV Entry
+<article id="02271b18"><h2>CLOSE META — ma_crossover <span class="badge close">close</span></h2><div class=meta>2026-11-20 14:35 UTC · trade 02271b18</div><div class=body>### Opportunity: Adopted Position, Not a Signal
+
+This entry represents a significant operational divergence from standard strategy execution. The `ma_crossover` strategy did not generate this trade based on a technical signal. The `strategy_reason` field explicitly states: &quot;adopted: broker position with no ledger record.&quot; This indicates that the automated bot detected an existing short position in META at the brokerage, valued at 6 shares, which lacked a corresponding entry in the internal paper-trading ledger.
+
+Consequently, the &quot;opportunity&quot; here was not a deterministic view on META’s price action. There are no indicator values provided in the `indicators` object, as no new signal was calculated to trigger this action. The entry price of $616.31 was not a market order placed by the bot; it was a retroactive adoption of a position filled on 2026-09-08 at 13:30 UTC. The bot’s role was to synchronize its internal state with the broker’s reality, effectively &quot;taking over&quot; management of a trade it did not initiate. This is a reconciliation event, not a discretionary trade.
+
+### Strategy Logic and Failure Modes
+
+The `ma_crossover` strategy typically relies on the intersection of short-term and long-term moving averages to identify trend shifts. In a standard scenario, a sell signal might occur when the short-term MA crosses below the long-term MA. However, because this trade was adopted, the strategic logic of the crossover was irrelevant to the *initiation*.
+
+The failure mode of an &quot;adopted position&quot; is not technical, but operational and risk-agnostic. When a bot adopts a position it did not create, it inherits a risk profile without having set the parameters. The strategy cannot know the original intent, the time horizon, or the specific reason the initial position was opened. A known failure mode in this context is the lack of a pre-defined trade plan. The `trade_plan` field is null. This means the bot is managing an asset with default parameters, which may not align with the volatility or liquidity characteristics of the specific security or the current market regime. Furthermore, adopting a position that has already moved significantly can result in an immediate &quot;unfavorable&quot; entry price relative to the current market, though in this case, the adoption price matched the fill price.
+
+### The Judge&#x27;s View
+
+There was no AI risk-review for this event. The `llm_review` field is null, along with all associated model metadata (`vendor_model`, `input_tokens`, etc.). This is consistent with the nature of an adoption event; the system likely bypassed the full LLM judgment pipeline because no new capital deployment was requested. The &quot;judge&quot; did not size this position; the size (6 shares) was fixed by the existing broker state. This absence of a fresh risk assessment is a critical caveat: the position was not vetted against current risk limits, volatility constraints, or portfolio exposure caps in the same manner as a newly generated signal.
+
+### Risk Plan and Outcome
+
+The risk plan for this adopted position was reactive rather than proactive. The bot applied its standard stop-loss logic to the existing position. The position was closed via `stop_loss` at $576.62. The entry price was $616.31, resulting in a loss of $238.14 (-6.44%).
+
+It is crucial to note that this is **paper trading**. No real capital was risked. The loss is a simulated metric.
+
+The outcome shows a loss, but the `alpha_pct` is +0.36%. The benchmark for the same period declined by -6.8%. Therefore, while the trade lost money, it underperformed less than the broader market metric defined for this benchmark. The `lesson_hypothesis` correctly identifies this as a potential pattern: adopting untracked positions may result in losses, but in this instance, the stop-loss managed the exit such that the relative performance was slightly positive against the benchmark. This does not prove the adoption strategy is profitable (n=1), but it highlights that even &quot;bad&quot; operational trades can outperform the benchmark if the stop-loss is triggered at a favorable moment relative to market weakness. The primary lesson is operational: the ledger and broker state were out of sync, forcing a retroactive adoption that stripped the strategy of its usual pre-trade analysis.</div></article><article id="b5a43a45"><h2>BUY ABBV — meanrev <span class="badge buy">buy</span></h2><div class=meta>2026-11-19 14:36 UTC · trade b5a43a45</div><div class=body>### Paper Trade Journal: ABBV Entry
 
 **Disclaimer:** This entry documents a simulated transaction. No real capital was at risk, and these results do not constitute financial advice or predictions of future performance.
 
