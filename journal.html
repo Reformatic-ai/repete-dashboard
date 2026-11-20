@@ -18,13 +18,90 @@ a{color:#2463eb;text-decoration:none}a:hover{text-decoration:underline}
 .buy{background:#d9f0e0}.close{background:#fdeec8}
 </style></head><body>
 <div class=wrap>
-<h1>trade journal <span class=small>[PAPER] — generated 2026-11-20 14:36 UTC</span></h1>
+<h1>trade journal <span class=small>[PAPER] — generated 2026-11-20 20:47 UTC</span></h1>
 <p class=small>Every trade this bot makes, explained: the opportunity, the
 strategy's logic, the AI judge's view, and the risk plan. Paper trading —
 nothing here is financial advice.
 <a href="index.html">← dashboard</a> ·
 <a href="blog.html">blog</a></p>
-<article id="02271b18"><h2>CLOSE META — ma_crossover <span class="badge close">close</span></h2><div class=meta>2026-11-20 14:35 UTC · trade 02271b18</div><div class=body>### Opportunity: Adopted Position, Not a Signal
+<article id="c6a9f44c"><h2>BUY XLF — meanrev <span class="badge buy">buy</span></h2><div class=meta>2026-11-20 20:46 UTC · trade c6a9f44c</div><div class=body>### Trade Journal: XLF Mean Reversion Entry
+
+**Disclaimer:** This is a paper trading exercise. No real capital is at risk. The following entry documents a simulated trade for educational and analytical purposes only.
+
+**The Opportunity**
+The deterministic strategy identified a mean-reversion setup in the SPDR Financial Select Sector ETF (XLF). The primary trigger was the 2-day Relative Strength Index (RSI2) dropping to 1.3, a level that signals extreme short-term oversold conditions. The strategy required this dip to occur within an intact long-term uptrend, which is confirmed by the current close of $54.815 trading above the 200-day Simple Moving Average (SMA200) at $53.75. The divergence between the current price and the 5-day SMA ($56.41) indicates a sharp, recent pullback, creating the &quot;snap-back&quot; potential the strategy seeks to exploit.
+
+**Strategy Logic and Failure Modes**
+Mean reversion in the context of financials relies on the premise that price deviations from the long-term trend are often temporary reactions to noise or sentiment rather than fundamental shifts. The logic is that an RSI2 near 1.0 rarely sustains itself, leading to a mechanical rebound. However, this strategy has well-documented failure modes. The most significant risk is &quot;catching a falling knife,&quot; where a dip in a strong market becomes the start of a broader sector rotation or a fundamental break in the uptrend. In a high-volatility environment, the time required for mean reversion may exceed the stop-loss tolerance, resulting in a stop-out before the price recovers. Additionally, the strategy is susceptible to regime change; if the long-term uptrend (SMA200) is violated, the &quot;dip&quot; is no longer a buying opportunity but a confirmation of a new downtrend.
+
+**The Judge&#x27;s View**
+The AI risk-review recommended a &quot;downsize&quot; with a scale factor of 0.3 and a confidence score of 0.55. The judge’s reasoning was rooted in the current market regime, which is classified as &quot;down/high.&quot; With SPY in correction and implied volatility at 26%, the judge noted that the &quot;uptrend&quot; condition is fragile. The review highlighted the strategy’s mixed historical performance (3 wins vs. 7 losses in the sample) and specific sector risks, including recent news of a customer data leak in the sector and workforce restructuring at major issuers. The judge concluded that while the oversold signal is present, the high probability of a stop-out in a volatile, correcting market necessitated a significant reduction in position size to cap downside exposure.
+
+**Risk Plan**
+The trade was executed at 54 shares with an entry price of $54.815.
+*   **Position Size:** 54 shares, reflecting the 0.3 size scale applied by the risk judge.
+*   **Stop Loss:** Set at $52.59. This invalidates the thesis if the price breaks significantly below the support provided by the long-term trend structure.
+*   **Take Profit:** No fixed take-profit was set; the strategy typically exits on RSI recovery or a trend-based exit.
+*   **Invalidation:** The trade is proven wrong if the stock closes below the stop price or if the SMA200 is decisively breached, indicating the long-term uptrend has failed.
+
+This entry represents a single data point (n=1). A single trade outcome, whether profitable or a loss, does not validate or invalidate the strategy&#x27;s edge.</div></article><article id="da84f728"><h2>CLOSE JPM — meanrev <span class="badge close">close</span></h2><div class=meta>2026-11-20 20:46 UTC · trade da84f728</div><div class=body>**Date:** 2026-11-17
+**Trade ID:** da84f728
+**Symbol:** JPM
+**Type:** Paper Trade (Buy/Sell Reversal)
+**Result:** Loss (-$255.90 / -5.16%)
+
+### The Opportunity
+The deterministic mean-reversion strategy identified a setup in JPM on November 17, 2026, where the stock price closed at $330.41. The primary signal was an RSI(2) value of 8.2, falling well below the strategy’s threshold of 10. Despite this extreme short-term oversold condition, the broader trend remained intact, with the price sitting above the 200-day Simple Moving Average ($322.75). However, the stock was trading below its 5-day SMA ($340.20), indicating a recent pullback. The strategy interpreted this as a mean-reverting dip within a long-term uptrend, triggering a buy entry at $330.41.
+
+### Strategy Logic
+This approach relies on the statistical tendency of prices to revert to their recent average after becoming temporarily oversold in a strong trend. The logic assumes that a drop below the 5-day average while remaining above the 200-day SMA is often a buying opportunity rather than a trend reversal. The known failure modes for this setup include &quot;catching a falling knife&quot; in a shifting market regime. If the dip signals a genuine trend change rather than noise, the price can continue to decline through the stop-loss without finding support. Additionally, mean-reversion trades have a lower win rate than momentum trades; they depend on time to work, which introduces the risk of prolonged drawdowns if the reversion is delayed.
+
+### Judge&#x27;s View
+The AI risk-reviewer flagged the setup with a &quot;downsize&quot; verdict. While the RSI(2) and SMA200 alignment matched a historically high-performing bucket, the reviewer noted that the current market regime was &quot;down/mid&quot; with rising volatility. The bear case highlighted a low recent approve accuracy (43%) for the strategy, specifically citing recent losses on similar large-cap mean-reversion trades (AMD, AVGO, NVDA) ranging from -6% to -8%. Consequently, the reviewer reduced the position size by 50% (scale factor of 0.5) to mitigate exposure to potential regime-driven headwinds, rather than rejecting the trade entirely. This resulted in a final quantity of 15 shares, a position value of approximately $4,956.
+
+### Risk Plan and Outcome
+The risk plan established a fixed stop-loss at $313.40, representing a risk of $17.01 per share (5.15% of entry price). There was no fixed take-profit target; the plan was to exit when the price closed back above the 5-day SMA, if the 7-day hard cap was reached, or if the stop was hit.
+
+The trade did not prove the thesis. JPM continued to decline, triggering the stop-loss at $313.35. The resulting loss was $255.90 (-5.16%).
+
+### Conclusion
+This single trade (n=1) demonstrates that even when specific technical indicators align with a high-probability historical pattern, the broader market regime can override the mean-reversion dynamics. The stock broke below the stop before reclaiming the 5-day average. While the trade underperformed the absolute price movement, it outperformed the benchmark by 0.64% (benchmark was -5.8%). This does not validate the strategy as a whole, nor does it invalidate it; it highlights the fragility of mean-reversion entries in volatile, downward-trending regimes. The &quot;downsize&quot; decision limited the absolute loss, but it could not prevent the directional failure of the trade.</div></article><article id="75761b09"><h2>CLOSE SPY — meanrev <span class="badge close">close</span></h2><div class=meta>2026-11-20 20:45 UTC · trade 75761b09</div><div class=body>**Paper Trading Log: SPY Mean Reversion Entry &amp; Exit**
+
+This entry documents the lifecycle of trade `75761b09`, executed in a **paper trading** environment. No real capital was at risk, but the mechanics, stops, and sizing rules were applied strictly as if it were live trading.
+
+### The Opportunity
+On November 16, 2026, the deterministic mean-reversion strategy identified a setup in SPY. The price closed at **$738.85**. The core signal was a 2-day RSI (RSI2) reading of **9.4**, which falls below the strict threshold of 10. This indicates extreme short-term oversold conditions. The strategy’s entry filter required that the uptrend remain intact relative to the long-term trend, defined here by the SMA200 at **$729.57**. Since the close ($738.85) was above the SMA200, the &quot;uptrend&quot; condition was technically satisfied, triggering a buy order for an oversold dip within a broader structural uptrend. However, the short-term trend was clearly weakening, as evidenced by the SMA5 at **$752.01**, which sat significantly above the current price.
+
+### Strategy Logic and Failure Modes
+This strategy trades the premise that broad index dips in established uptrends are often over-reactions driven by momentum exhaustion, leading to a snap-back to the mean. The logic relies on the historical tendency of SPY to recover quickly from extreme 2-day oversold readings when the 200-day trend is positive. The primary failure mode occurs when a &quot;dip&quot; is actually the beginning of a larger, sustained trend reversal or a regime change. In such cases, the &quot;oversold&quot; condition persists because the new trend direction is downward, and the price continues to fall rather than mean-revert. Additionally, if the short-term momentum (SMA5) is far above the price, it suggests recent selling pressure that may not reverse immediately.
+
+### The Judge’s View
+The AI risk-review flagged a significant conflict between the signal and the current market regime. While the RSI2 was deeply oversold, the regime was classified as **&quot;down/mid&quot;**, indicating SPY was trading below its SMA50. The review cited fresh, severe risk-off news (referenced as a &quot;Nvidia scandal&quot; and hawkish Fed commentary) and noted that the strategy’s recent history in similar contexts showed a 50% loss rate, with substantial drawdowns on other names like AMD and NVDA. The reviewer concluded that the fresh news catalyst contradicted the &quot;intact uptrend&quot; premise, increasing the risk of trend continuation against the trade. Consequently, the verdict was **downsize**, reducing the position size to **30% (0.3 scale)** of the standard allocation. This decision was not a veto, as the historical sample for this specific RSI2 signal suggested potential for large gains, but a reduction to respect the elevated risk.
+
+### The Risk Plan
+The position size was calculated based on the downsized allocation, resulting in **3 shares** of SPY, a total position value of approximately **$2,216.55**. The stop-loss was placed at **$711.84**, representing a risk of **$27.01 per share** or **3.66%** of the entry price. This fixed stop was designed to invalidate the trade if the price closed below that level, confirming that the &quot;dip&quot; was, in fact, a breakdown. The exit plan had no fixed take-profit; the trade was intended to exit as soon as the price closed back above the SMA5 (the 5-day average), or if the 7-day hard cap was reached. The thesis was short-term, expecting a bounce within days, not weeks.
+
+### Outcome
+The trade was entered at **$738.85** and was stopped out at **$711.80**. The result was a **loss of $81.15 (-3.66%)**. The stop-loss was hit, proving the thesis wrong in the short term: the price did not revert to the mean above the SMA5; instead, it continued to drift lower. While the trade lost money, it outperformed the benchmark by **3.10%** (benchmark PnL: -6.76%). This single instance (n=1) suggests that entering deep oversold mean-reversion trades in a &quot;down/mid&quot; regime with reduced size may limit downside relative to the broader market, even if the specific trade fails. It does not, however, prove that the strategy is effective in this regime, only that the sizing and stop placement managed the loss relative to the benchmark.</div></article><article id="26f916ea"><h2>CLOSE XLF — ma_crossover <span class="badge close">close</span></h2><div class=meta>2026-11-20 20:45 UTC · trade 26f916ea</div><div class=body>**Paper Trade Journal: XLF MA Crossover (Loss)**
+
+**Clarification: This is a paper trade.** No real capital was at risk. The following analysis is for the learning loop of an automated swing-trading bot and does not constitute financial advice.
+
+**The Opportunity**
+On October 21, 2026, the deterministic strategy flagged a long entry for the SPDR Financial Select Sector ETF (XLF). The trigger was a standard Moving Average Crossover: the 10-day Simple Moving Average (SMA10) at $55.09 crossed above the 30-day SMA (SMA30) at $55.00. With the closing price at $55.99, the bot interpreted this as a confirmation that short-term momentum was turning upward within a broader &quot;up/low&quot; market regime. The strategy’s logic is to capture the initial leg of a trend change by entering when the fast average overtakes the slow one, assuming that price action will continue to respect the new directional bias until a reverse crossover occurs.
+
+**Strategy Logic and Failure Modes**
+Crossover strategies are classic trend-following tools. Their edge relies on the statistical tendency of trends to persist once established. However, they are notorious for &quot;whipsaws,&quot; particularly in ranging or choppy markets. In an &quot;up/low&quot; regime—where the market is trending but with significant volatility or pullbacks—these tight-spread crossovers often fail because the gap between the two averages is minimal ($0.09 in this case). A small adverse move can easily push the price back below the slow average, triggering an immediate stop-out before the trend has room to develop. This trade highlights that risk: the entry was only $0.99 above the SMA30, offering little buffer against noise.
+
+**The Judge&#x27;s View**
+The AI risk-review layer did not approve the trade at full size. It issued a &quot;downsize&quot; verdict with a scale factor of 0.30 and a confidence score of only 0.45. The judge’s reasoning was heavily weighted toward historical performance data. It noted that similar `ma_crossover` setups in this specific regime had resulted in significant losses for other symbols (e.g., CAT and AVGO). Furthermore, the review cited a pattern of vetoes and downsizes for XLF specifically, suggesting that the risk layer identifies structural weaknesses in this ticker’s behavior during crossovers that the simple price action does not reveal. The judge essentially said: &quot;The signal is technically valid, but the probability of success is too low to justify full exposure.&quot;
+
+**Risk Plan and Outcome**
+Despite the downsize, the bot executed a buy order for 42 shares at $55.99. The position value was $2,351.58. A hard stop-loss was placed at $54.63, representing a risk of $1.36 per share (2.43% of entry price). There was no take-profit target; the exit was defined solely by the stop or a reverse crossover.
+
+The trade failed according to plan. The price did not sustain the breakout. By the exit event, the price had dropped to $54.62, hitting the stop-loss order. The realized loss was -$57.54, or -2.45%.
+
+**Analysis of the Result**
+This was an expected outcome based on the judge’s low confidence, but it is a successful validation of the risk-management sizing. Had the bot entered at full size, the loss would have been approximately three times larger. More importantly, while the trade lost money, it generated a positive alpha of 8.31% relative to the benchmark, which fell 10.76% over the same period. This suggests that the strategy correctly avoided a much larger drawdown that would have occurred if it had held a longer-term position in a falling market. However, this is n=1. One trade does not prove the strategy is broken, nor does it prove it is working. It only proves that the stop-loss executed as designed and that the &quot;downsize&quot; verdict protected capital from a larger loss. The lesson recorded is that `ma_crossover` entries in this regime are high-risk, high-failure probability setups, and future sizing should remain conservative until statistical evidence suggests otherwise.</div></article><article id="02271b18"><h2>CLOSE META — ma_crossover <span class="badge close">close</span></h2><div class=meta>2026-11-20 14:35 UTC · trade 02271b18</div><div class=body>### Opportunity: Adopted Position, Not a Signal
 
 This entry represents a significant operational divergence from standard strategy execution. The `ma_crossover` strategy did not generate this trade based on a technical signal. The `strategy_reason` field explicitly states: &quot;adopted: broker position with no ledger record.&quot; This indicates that the automated bot detected an existing short position in META at the brokerage, valued at 6 shares, which lacked a corresponding entry in the internal paper-trading ledger.
 
