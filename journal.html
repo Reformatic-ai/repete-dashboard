@@ -18,13 +18,56 @@ a{color:#2463eb;text-decoration:none}a:hover{text-decoration:underline}
 .buy{background:#d9f0e0}.close{background:#fdeec8}
 </style></head><body>
 <div class=wrap>
-<h1>trade journal <span class=small>[PAPER] — generated 2026-11-23 14:35 UTC</span></h1>
+<h1>trade journal <span class=small>[PAPER] — generated 2026-11-23 20:47 UTC</span></h1>
 <p class=small>Every trade this bot makes, explained: the opportunity, the
 strategy's logic, the AI judge's view, and the risk plan. Paper trading —
 nothing here is financial advice.
 <a href="index.html">← dashboard</a> ·
 <a href="blog.html">blog</a></p>
-<article id="c6a9f44c"><h2>BUY XLF — meanrev <span class="badge buy">buy</span></h2><div class=meta>2026-11-20 20:46 UTC · trade c6a9f44c</div><div class=body>### Trade Journal: XLF Mean Reversion Entry
+<article id="b5a43a45"><h2>CLOSE ABBV — meanrev <span class="badge close">close</span></h2><div class=meta>2026-11-23 20:46 UTC · trade b5a43a45</div><div class=body>**Date:** 2026-11-19
+**Symbol:** ABBV
+**Action:** Buy (Closed)
+**Status:** Paper Trade
+**Result:** Win (+$25.40 / +0.89%)
+
+### The Opportunity
+This entry was triggered by a deterministic mean-reversion rule: the 2-day Relative Strength Index (RSI2) dropped to 1.9, well below the 10 threshold, while the price remained significantly above the 200-day Simple Moving Average (SMA200). At the time of entry, ABBV closed at $286.01. The strategy interpreted this divergence as a temporary oversold dip within a long-term uptrend. The 5-day SMA was at $292.57, indicating short-term weakness, but the distance to the SMA200 ($239.25) was substantial, confirming the broader trend remained intact. The bot sought to capture the snap-back to the 5-day average.
+
+### Strategy Logic and Failure Modes
+The core thesis of this strategy is that in established uptrends, extreme short-term weakness is often noise rather than a signal of a new downtrend. However, this logic has known failure modes. It fails when a &quot;dip&quot; is actually the beginning of a structural break, particularly when macro headwinds are strong. In a &quot;down/mid&quot; market regime, oversold conditions can persist for weeks, leading to slow bleed losses or hard stop-outs. The strategy does not account for macro regime shifts, only price action relative to moving averages.
+
+### The Judge’s View
+The AI risk review highlighted a critical conflict: while the individual symbol’s signal was historically strong (citing a 70% win rate in similar past trades), the broader market context was hostile. The review noted the &quot;down/mid&quot; regime and hawkish Federal Reserve minutes as significant headwinds. It cited recent failures in similar setups on NVDA, XLK, and UNH, which resulted in significant losses due to macro pressure. Consequently, the judge issued a &quot;downsize&quot; verdict with a scale factor of 0.3. This reduced the position size from the standard allocation to just 10 shares, reflecting a confidence level of only 0.62. The logic was to allow participation in the statistical edge while respecting the elevated risk of regime mismatch.
+
+### Risk Plan and Execution
+The risk plan established a fixed stop-loss at $271.13, a 5.2% risk per share from the entry of $286.01. With 10 shares, the total risk was capped at approximately $148.80. The exit plan was rule-based: the position would close if the price closed above the 5-day SMA, after 7 days elapsed, or if the stop was hit. There was no fixed take-profit target.
+
+### Outcome Analysis
+The trade was closed via `strategy_sell`, indicating the price recovered and closed above the 5-day SMA. The exit price was $288.55, resulting in a profit of $25.40 (+0.89%). While this is a &quot;win,&quot; it is a modest one. Notably, the benchmark returned 1.19% over the same period, meaning this trade underperformed the market by 0.3% (negative alpha).
+
+This single trade does not prove the strategy works in &quot;down/mid&quot; regimes. It is n=1. It does, however, confirm that the downsizing protocol functioned as intended, limiting exposure during a period where similar trades had failed. The underperformance relative to the benchmark suggests that while the specific entry timed a short-term bounce, the macro headwinds identified by the judge did impact the magnitude of the recovery. The bot adhered to the plan, exited on the rule-based trigger, and preserved capital. This is a paper trade, and results are not indicative of future performance.</div></article><article id="0b17266c"><h2>CLOSE HD — meanrev <span class="badge close">close</span></h2><div class=meta>2026-11-23 20:45 UTC · trade 0b17266c</div><div class=body>**PAPER TRADE JOURNAL: HD Entry**
+
+*Note: This is an automated PAPER trading log. No real capital was at risk. This entry documents the decision-making process for a simulated position in Home Depot (HD).*
+
+### The Opportunity
+
+The deterministic mean-reversion strategy identified a setup in HD at the close of $339.01. The primary trigger was the 2-day Relative Strength Index (RSI2) dropping to 3.3, a value well below the strategy’s threshold of 10. This extreme short-term oversold condition was flagged in the context of a longer-term uptrend, evidenced by price holding above the 200-day Simple Moving Average (SMA200) at $329.16. While the 5-day SMA ($346.96) was above the current price, indicating a recent pullback, the integrity of the long-term trend was the defining factor. The strategy interpreted this as a temporary, oversold dip within a broader bullish structure, rather than the start of a new downtrend.
+
+### The Strategy&#x27;s Logic
+
+Mean-reversion strategies of this class operate on the premise that extreme short-term pricing anomalies tend to revert to the mean. When a quality stock dips sharply but fails to break below a major long-term support level like the SMA200, the strategy bets that the pullback was an overreaction to short-term noise.
+
+However, this approach has well-known failure modes. The most critical risk is &quot;catching a falling knife.&quot; If the dip is not a temporary correction but the beginning of a structural trend reversal, the SMA200 support may fail. Furthermore, in a broader &quot;down/mid&quot; market regime—as was the case here—uptrends are more fragile. A break below the SMA200 would invalidate the &quot;uptrend intact&quot; premise, potentially leading to significant drawdowns if the stop-loss is not tight enough.
+
+### The Judge&#x27;s View
+
+The AI risk-review provided a nuanced &quot;downsize&quot; verdict with a size scale of 0.3 and a confidence level of 0.55. The judge acknowledged the textbook nature of the technicals but highlighted two significant contradictions. First, the macro regime was tagged as &quot;down/mid,&quot; which conflicted with the &quot;uptrend intact&quot; assumption required by the strategy. Second, the review noted specific fundamental headwinds for HD, including a recent sell downgrade and deteriorating homebuilder sentiment. The judge also cited a history of four recent vetoes for this symbol, suggesting persistent risk. Consequently, the full calculated position size was reduced by 70% to mitigate exposure to a potentially broken trend.
+
+### The Risk Plan
+
+Following the judge’s instruction, the bot executed a buy order for 8 shares at $339.01, resulting in a position value of $2,712.08. This was a fraction of the standard size due to the 0.3 scale factor.
+
+The risk plan included a fixed stop-loss at $318.01, which was approximately 6.19% below the entry price. This placement was designed to sit below the SMA200 ($329.16) with a buffer, ensuring that a break of the long-term trend would trigger the exit. There was no fixed take-profit target; instead, the position was set to exit when price closed back above the 5-day SMA ($346.96) or if the 7-day hard cap was reached. The trade was considered wrong if the price closed below the $318.01 stop, indicating that the dip was not a mean-reverting event but a trend change.</div></article><article id="c6a9f44c"><h2>BUY XLF — meanrev <span class="badge buy">buy</span></h2><div class=meta>2026-11-20 20:46 UTC · trade c6a9f44c</div><div class=body>### Trade Journal: XLF Mean Reversion Entry
 
 **Disclaimer:** This is a paper trading exercise. No real capital is at risk. The following entry documents a simulated trade for educational and analytical purposes only.
 
