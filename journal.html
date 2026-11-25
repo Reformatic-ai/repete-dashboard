@@ -18,13 +18,38 @@ a{color:#2463eb;text-decoration:none}a:hover{text-decoration:underline}
 .buy{background:#d9f0e0}.close{background:#fdeec8}
 </style></head><body>
 <div class=wrap>
-<h1>trade journal <span class=small>[PAPER] — generated 2026-11-24 20:45 UTC</span></h1>
+<h1>trade journal <span class=small>[PAPER] — generated 2026-11-25 14:36 UTC</span></h1>
 <p class=small>Every trade this bot makes, explained: the opportunity, the
 strategy's logic, the AI judge's view, and the risk plan. Paper trading —
 nothing here is financial advice.
 <a href="index.html">← dashboard</a> ·
 <a href="blog.html">blog</a></p>
-<article id="b5a43a45"><h2>CLOSE ABBV — meanrev <span class="badge close">close</span></h2><div class=meta>2026-11-23 20:46 UTC · trade b5a43a45</div><div class=body>**Date:** 2026-11-19
+<article id="c6a9f44c"><h2>CLOSE XLF — meanrev <span class="badge close">close</span></h2><div class=meta>2026-11-25 14:35 UTC · trade c6a9f44c</div><div class=body>**Trade Log: XLF Mean Reversion Entry (Paper Trading)**
+
+This entry documents the lifecycle of paper trade `c6a9f44c`. As this is an automated paper-trading simulation, no real capital was at risk, and these results serve strictly for strategy validation and risk calibration.
+
+### The Opportunity
+The deterministic strategy identified a mean-reversion setup in XLF (Financial Select Sector SPDR Fund) based on a divergence between short-term momentum and long-term trend. The core trigger was the RSI2 indicator dropping to 1.3, a level well below the strategy’s threshold of 10. Simultaneously, the closing price of $54.81 remained firmly above the 200-day Simple Moving Average (SMA200) at $53.75. This configuration signaled an &quot;oversold dip in an uptrend.&quot; The 5-day SMA stood at $56.41, indicating the price had pulled back approximately 2.8% from its recent average. The strategy interpreted this as a statistical anomaly where short-term selling pressure was excessive relative to the broader trend, predicting a reversion toward the 5-day average.
+
+### Strategy Logic and Failure Modes
+Mean-reversion strategies in large-cap ETFs like XLF rely on the premise that liquid indices rarely sustain extreme vertical moves against their long-term trend without a correction. The logic is to buy extreme dislocations (low RSI2) while the primary trend (SMA200) remains intact.
+
+However, this setup has well-known failure modes. The primary risk is that a &quot;dip&quot; can transform into a trend reversal. If the break below the SMA200 occurs, the &quot;uptrend&quot; assumption becomes invalid, and the mean-reversion thesis collapses. Additionally, in high-volatility regimes, the time horizon for reversion often stretches beyond the strategy’s hard cap, leading to premature stops or time-based exits before price recovers. The strategy acknowledges that RSI2 &lt; 10 is a signal of stress, not a guarantee of recovery; it is a bet on the resilience of the financial sector.
+
+### The Judge’s View
+The AI risk-review model, running on Qwen3.8-27b, analyzed the setup against the current market regime, tagged as &quot;down/high&quot; with SPY in correction and volatility at 26%. The judge cited a mixed historical track record for this specific signal (3 wins vs. 7 losses) and noted that previous similar trades had been downsized or vetoed due to sector-specific shocks.
+
+The judge’s verdict was to **downsize** the position to 30% of the standard scale, reflecting a confidence level of only 0.55. The reasoning emphasized that the &quot;down/high&quot; regime increases the probability that the stop-loss would be hit before mean reversion could occur. The judge explicitly noted that while the RSI2 reading was severe, the macro environment was hostile to catching falling knives. This conservative sizing was intended to cap the potential drawdown if the trend reversed rather than reverted.
+
+### Risk Plan and Execution
+The risk plan was defined by a fixed stop-loss at $52.59, which placed the stop 4.06% below the entry price of $54.81. This stop was designed to invalidate the thesis if the price lost the support zone below the SMA200. There was no fixed take-profit price; instead, the trade was planned to exit as soon as the price closed back above the 5-day SMA ($56.41), or after a hard cap of 7 days.
+
+The bot executed the order with a quantity of 54 shares, resulting in a position value of approximately $2,960. The reduced size directly reflected the judge’s 0.3 scale factor.
+
+### Outcome and Analysis
+The trade resulted in a **win**, exiting at $56.11 with a realized PnL of $69.93 (2.36%). The exit was triggered by the &quot;strategy_sell&quot; condition, implying the price recovered to the target zone (the 5-day SMA) before hitting the stop or the time limit.
+
+However, context is critical. While the trade was profitable in absolute terms, it underperformed the benchmark, which returned 4.2% over the same period, resulting in an alpha of -1.84%. This single trade (n=1) does not prove the strategy’s efficacy in the &quot;down/high&quot; regime, nor does it refute it. It highlights that even successful mean-reversion trades can lag the broader market during strong recovery rallies. The lesson recorded is a &quot;possible pattern&quot; that these entries may yield small positive returns that still trail the benchmark, suggesting that in correctionary markets, the cost of waiting for reversion may erode potential alpha compared to holding the benchmark.</div></article><article id="b5a43a45"><h2>CLOSE ABBV — meanrev <span class="badge close">close</span></h2><div class=meta>2026-11-23 20:46 UTC · trade b5a43a45</div><div class=body>**Date:** 2026-11-19
 **Symbol:** ABBV
 **Action:** Buy (Closed)
 **Status:** Paper Trade
