@@ -18,13 +18,29 @@ a{color:#2463eb;text-decoration:none}a:hover{text-decoration:underline}
 .buy{background:#d9f0e0}.close{background:#fdeec8}
 </style></head><body>
 <div class=wrap>
-<h1>trade journal <span class=small>[PAPER] — generated 2026-11-25 20:45 UTC</span></h1>
+<h1>trade journal <span class=small>[PAPER] — generated 2026-11-26 14:35 UTC</span></h1>
 <p class=small>Every trade this bot makes, explained: the opportunity, the
 strategy's logic, the AI judge's view, and the risk plan. Paper trading —
 nothing here is financial advice.
 <a href="index.html">← dashboard</a> ·
 <a href="blog.html">blog</a></p>
-<article id="c6a9f44c"><h2>CLOSE XLF — meanrev <span class="badge close">close</span></h2><div class=meta>2026-11-25 14:35 UTC · trade c6a9f44c</div><div class=body>**Trade Log: XLF Mean Reversion Entry (Paper Trading)**
+<article id="53edb5e6"><h2>CLOSE XLE — meanrev <span class="badge close">close</span></h2><div class=meta>2026-11-26 14:35 UTC · trade 53edb5e6</div><div class=body>### Paper Trade Journal: XLE Mean Reversion
+
+**Note: This is a paper trading simulation. No real capital was risked.**
+
+On November 18, 2026, the automated system initiated a long position in the Energy Select Sector SPDR Fund (XLE) at $61.54. The entry was triggered by a deterministic mean-reversion strategy operating in a &quot;down/mid&quot; market regime. The logic was straightforward: the 2-day Relative Strength Index (RSI2) had plummeted to 7.3, signaling extreme short-term oversold conditions. Crucially, the strategy’s trend filter remained active because XLE’s price was still trading above the 200-day Simple Moving Average (SMA) of $59.13. Despite the broader market weakness, the energy sector exhibited a relative strength that the algorithm interpreted as an uptrend intact, suggesting the dip was a temporary deviation from the mean rather than a trend reversal. The 5-day SMA sat at $63.58, well above the entry price, indicating the stock was stretched below its immediate average.
+
+This class of setup is traded under the assumption that prices oscillate around a mean. When short-term momentum becomes excessive (RSI2 &lt; 10), statistical probability favors a snap-back toward the average. However, this logic has well-documented failure modes. The primary risk is that an &quot;oversold&quot; price in a bearish macro environment is not a bottom but the beginning of a sustained decline. If the sector’s relative strength is a decaying bubble rather than a structural uptrend, the mean-reversion bounce never materializes, and the price drifts lower until the stop is hit.
+
+The AI risk-review layer flagged a significant contradiction. While the historical win rate for this specific signal is roughly 60%, the prevailing &quot;down/mid&quot; regime (SPY below its 200-day SMA) is a known kill condition for mean-reversion hybrids. The review noted recent failures in NVDA and AMD under similar conditions, where sector-specific rallies collapsed as the broader market dragged prices down. The judge concluded that the &quot;uptrend&quot; in XLE was likely a fragile, sector-specific anomaly. Consequently, the review issued a &quot;downsize&quot; verdict with a scale factor of 0.3 and a confidence of 0.55. This reduced the position size to 48 shares (approximately $2,954 notional value) to strictly limit exposure to the regime mismatch, rather than entering a full-sized position.
+
+The risk plan was conservative and mechanical. A fixed stop-loss was placed at $57.92, representing a 5.88% risk per share ($3.62). There was no take-profit target; the exit logic was designed to capture the mean reversion once the price closed back above the 5-day SMA, or to cut losses if the $57.92 stop was breached. The hard cap was 7 days.
+
+**Outcome:**
+The trade exited at $60.90 via a &quot;strategy_sell&quot; signal, resulting in a loss of $30.72 (-1.04%). The price failed to reclaim the 5-day SMA before the exit conditions were met, likely as the 7-day cap approached or the short-term momentum remained weak.
+
+**Analysis:**
+While this is a loss in absolute terms, it provides nuanced data. The position outperformed the benchmark, which fell -1.85% over the same period, generating a positive alpha of +0.81%. This single instance (n=1) does not prove the strategy is robust in bearish regimes, but it supports the hypothesis that the 0.3 downsize effectively contained damage. The trade did not prove that mean reversion works in a down market; it proved that a reduced-size entry can limit losses when the expected bounce fails to occur, preserving capital while slightly outperforming the broader market drift. Future iterations should evaluate if the RSI2 &lt; 10 threshold is too sensitive in &quot;down/mid&quot; regimes or if the 5-day SMA exit rule is too fast for sector ETFs with high inertia.</div></article><article id="c6a9f44c"><h2>CLOSE XLF — meanrev <span class="badge close">close</span></h2><div class=meta>2026-11-25 14:35 UTC · trade c6a9f44c</div><div class=body>**Trade Log: XLF Mean Reversion Entry (Paper Trading)**
 
 This entry documents the lifecycle of paper trade `c6a9f44c`. As this is an automated paper-trading simulation, no real capital was at risk, and these results serve strictly for strategy validation and risk calibration.
 
